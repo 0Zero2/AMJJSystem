@@ -55,6 +55,7 @@
             listView1 = new ListView();
             textBox8 = new TextBox();
             label11 = new Label();
+            button5 = new Button();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -288,6 +289,15 @@
             label11.TabIndex = 16;
             label11.Text = "Phone number";
             // 
+            // button5
+            // 
+            button5.Location = new Point(52, 569);
+            button5.Name = "button5";
+            button5.Size = new Size(84, 23);
+            button5.TabIndex = 25;
+            button5.Text = "UPDATE";
+            button5.UseVisualStyleBackColor = true;
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -298,6 +308,7 @@
             Controls.Add(comboBox1);
             Controls.Add(button4);
             Controls.Add(button3);
+            Controls.Add(button5);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label10);
@@ -321,7 +332,7 @@
             Controls.Add(textBox1);
             Controls.Add(listView1);
             Name = "Form6";
-            Text = "Form6";
+            Text = "  ";
             Load += Form6_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -356,5 +367,6 @@
         private ListView listView1;
         private TextBox textBox8;
         private Label label11;
+        private Button button5;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class Form5 : Form
+    public partial class frmReceive : Form
     {
-        public Form5()
+        public frmReceive()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class Form4 : Form
+    public partial class frmDelivery : Form
     {
-        public Form4()
+        public frmDelivery()
         {
             InitializeComponent();
         }

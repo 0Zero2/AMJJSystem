@@ -1,6 +1,6 @@
 ﻿namespace AMJJSystem
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,147 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            TxtUsername = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
-            button2 = new Button();
+            showCheckBox = new CheckBox();
+            loginBTN = new Button();
+            clearBTN = new Button();
             label4 = new Label();
-            label5 = new Label();
+            createLabel = new Label();
+            TxtPassword = new TextBox();
             SuspendLayout();
             // 
-            // textBox1
+            // TxtUsername
             // 
-            textBox1.Location = new Point(57, 367);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(311, 43);
-            textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(57, 468);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(311, 43);
-            textBox2.TabIndex = 0;
+            TxtUsername.Location = new Point(50, 285);
+            TxtUsername.Multiline = true;
+            TxtUsername.Name = "TxtUsername";
+            TxtUsername.Size = new Size(273, 33);
+            TxtUsername.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(191, 273);
+            label1.Font = new Font("Times New Roman", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(141, 191);
             label1.Name = "label1";
-            label1.Size = new Size(46, 20);
+            label1.Size = new Size(104, 42);
             label1.TabIndex = 1;
             label1.Text = "Login";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(58, 329);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(50, 261);
             label2.Name = "label2";
-            label2.Size = new Size(75, 20);
+            label2.Size = new Size(81, 21);
             label2.TabIndex = 2;
             label2.Text = "Username";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(58, 431);
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(50, 323);
             label3.Name = "label3";
-            label3.Size = new Size(70, 20);
+            label3.Size = new Size(69, 19);
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
-            // checkBox1
+            // showCheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(274, 435);
-            checkBox1.Margin = new Padding(3, 4, 3, 4);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(67, 24);
-            checkBox1.TabIndex = 4;
-            checkBox1.Text = "Show";
-            checkBox1.UseVisualStyleBackColor = true;
+            showCheckBox.AutoSize = true;
+            showCheckBox.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            showCheckBox.Location = new Point(263, 324);
+            showCheckBox.Name = "showCheckBox";
+            showCheckBox.Size = new Size(60, 21);
+            showCheckBox.TabIndex = 4;
+            showCheckBox.Text = "Show";
+            showCheckBox.UseVisualStyleBackColor = true;
+            showCheckBox.CheckedChanged += showCheckbox_CheckedChanged;
             // 
-            // button1
+            // loginBTN
             // 
-            button1.Location = new Point(58, 584);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(311, 41);
-            button1.TabIndex = 5;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            loginBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            loginBTN.Location = new Point(51, 405);
+            loginBTN.Name = "loginBTN";
+            loginBTN.Size = new Size(272, 31);
+            loginBTN.TabIndex = 5;
+            loginBTN.Text = "Login";
+            loginBTN.UseVisualStyleBackColor = true;
+            loginBTN.Click += loginBTN_Click;
             // 
-            // button2
+            // clearBTN
             // 
-            button2.Location = new Point(58, 659);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(311, 41);
-            button2.TabIndex = 5;
-            button2.Text = "Clear";
-            button2.UseVisualStyleBackColor = true;
+            clearBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            clearBTN.Location = new Point(51, 457);
+            clearBTN.Name = "clearBTN";
+            clearBTN.Size = new Size(272, 31);
+            clearBTN.TabIndex = 5;
+            clearBTN.Text = "Clear";
+            clearBTN.UseVisualStyleBackColor = true;
+            clearBTN.Click += clearBTN_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(114, 734);
+            label4.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(101, 515);
             label4.Name = "label4";
-            label4.Size = new Size(83, 20);
+            label4.Size = new Size(78, 17);
             label4.TabIndex = 3;
             label4.Text = "New here? ";
             // 
-            // label5
+            // createLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(187, 734);
-            label5.Name = "label5";
-            label5.Size = new Size(128, 20);
-            label5.TabIndex = 3;
-            label5.Text = "Create an account";
+            createLabel.AutoSize = true;
+            createLabel.BackColor = SystemColors.Control;
+            createLabel.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            createLabel.ForeColor = Color.FromArgb(192, 0, 0);
+            createLabel.Location = new Point(174, 515);
+            createLabel.Name = "createLabel";
+            createLabel.Size = new Size(116, 17);
+            createLabel.TabIndex = 3;
+            createLabel.Text = "Create an account";
+            createLabel.Click += createLabel_Click;
             // 
-            // Form1
+            // TxtPassword
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            TxtPassword.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtPassword.Location = new Point(50, 351);
+            TxtPassword.Name = "TxtPassword";
+            TxtPassword.Size = new Size(273, 38);
+            TxtPassword.TabIndex = 6;
+            TxtPassword.UseSystemPasswordChar = true;
+            // 
+            // frmLogin
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(435, 841);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(checkBox1);
-            Controls.Add(label5);
+            ClientSize = new Size(381, 631);
+            Controls.Add(TxtPassword);
+            Controls.Add(clearBTN);
+            Controls.Add(loginBTN);
+            Controls.Add(showCheckBox);
+            Controls.Add(createLabel);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtUsername);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Name = "Form1";
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmLogin";
             Text = "Login";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox TxtUsername;
         private Label label1;
         private Label label2;
         private Label label3;
-        private CheckBox checkBox1;
-        private Button button1;
-        private Button button2;
+        private CheckBox showCheckBox;
+        private Button loginBTN;
+        private Button clearBTN;
         private Label label4;
-        private Label label5;
+        private Label createLabel;
+        private TextBox TxtPassword;
     }
 }

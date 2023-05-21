@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class frmPickup : Form
+    public partial class Driver : Form
     {
-        public frmPickup()
+        public Driver()
         {
             InitializeComponent();
         }
 
-        private void Form6_Load(object sender, EventArgs e)
+        private void Driver_Load(object sender, EventArgs e)
         {
 
         }

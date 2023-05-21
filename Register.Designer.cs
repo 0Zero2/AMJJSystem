@@ -40,16 +40,16 @@
             TxtLastname = new TextBox();
             TxtFirstname = new TextBox();
             label6 = new Label();
-            TxtPhonenum = new TextBox();
-            label7 = new Label();
             TxtUsername = new TextBox();
             label8 = new Label();
+            ClientRB = new RadioButton();
+            AdminRB = new RadioButton();
             SuspendLayout();
             // 
             // clearBTN
             // 
             clearBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            clearBTN.Location = new Point(56, 538);
+            clearBTN.Location = new Point(54, 526);
             clearBTN.Name = "clearBTN";
             clearBTN.Size = new Size(269, 31);
             clearBTN.TabIndex = 14;
@@ -60,7 +60,7 @@
             // registerBTN
             // 
             registerBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            registerBTN.Location = new Point(56, 487);
+            registerBTN.Location = new Point(54, 475);
             registerBTN.Name = "registerBTN";
             registerBTN.Size = new Size(269, 31);
             registerBTN.TabIndex = 15;
@@ -72,7 +72,7 @@
             // 
             showCheckBox.AutoSize = true;
             showCheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            showCheckBox.Location = new Point(263, 406);
+            showCheckBox.Location = new Point(261, 388);
             showCheckBox.Name = "showCheckBox";
             showCheckBox.Size = new Size(63, 23);
             showCheckBox.TabIndex = 13;
@@ -85,7 +85,7 @@
             loginLabel.AutoSize = true;
             loginLabel.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             loginLabel.ForeColor = Color.FromArgb(192, 0, 0);
-            loginLabel.Location = new Point(234, 585);
+            loginLabel.Location = new Point(232, 573);
             loginLabel.Name = "loginLabel";
             loginLabel.Size = new Size(45, 17);
             loginLabel.TabIndex = 10;
@@ -96,7 +96,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(72, 585);
+            label4.Location = new Point(70, 573);
             label4.Name = "label4";
             label4.Size = new Size(162, 17);
             label4.TabIndex = 11;
@@ -106,7 +106,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(56, 403);
+            label3.Location = new Point(55, 388);
             label3.Name = "label3";
             label3.Size = new Size(69, 19);
             label3.TabIndex = 12;
@@ -116,7 +116,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(59, 225);
+            label2.Location = new Point(55, 225);
             label2.Name = "label2";
             label2.Size = new Size(67, 19);
             label2.TabIndex = 9;
@@ -135,7 +135,7 @@
             // TxtPassword
             // 
             TxtPassword.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtPassword.Location = new Point(58, 435);
+            TxtPassword.Location = new Point(56, 417);
             TxtPassword.Name = "TxtPassword";
             TxtPassword.Size = new Size(267, 38);
             TxtPassword.TabIndex = 6;
@@ -167,27 +167,9 @@
             label6.TabIndex = 9;
             label6.Text = "Firstname";
             // 
-            // TxtPhonenum
-            // 
-            TxtPhonenum.Location = new Point(57, 309);
-            TxtPhonenum.Multiline = true;
-            TxtPhonenum.Name = "TxtPhonenum";
-            TxtPhonenum.Size = new Size(270, 33);
-            TxtPhonenum.TabIndex = 7;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(56, 287);
-            label7.Name = "label7";
-            label7.Size = new Size(96, 19);
-            label7.TabIndex = 9;
-            label7.Text = "Phone number";
-            // 
             // TxtUsername
             // 
-            TxtUsername.Location = new Point(57, 367);
+            TxtUsername.Location = new Point(57, 311);
             TxtUsername.Multiline = true;
             TxtUsername.Name = "TxtUsername";
             TxtUsername.Size = new Size(269, 33);
@@ -197,17 +179,43 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(60, 345);
+            label8.Location = new Point(54, 289);
             label8.Name = "label8";
             label8.Size = new Size(70, 19);
             label8.TabIndex = 9;
             label8.Text = "Username";
+            // 
+            // ClientRB
+            // 
+            ClientRB.AutoSize = true;
+            ClientRB.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ClientRB.Location = new Point(141, 359);
+            ClientRB.Name = "ClientRB";
+            ClientRB.Size = new Size(71, 25);
+            ClientRB.TabIndex = 16;
+            ClientRB.TabStop = true;
+            ClientRB.Text = "Client";
+            ClientRB.UseVisualStyleBackColor = true;
+            // 
+            // AdminRB
+            // 
+            AdminRB.AutoSize = true;
+            AdminRB.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            AdminRB.Location = new Point(57, 359);
+            AdminRB.Name = "AdminRB";
+            AdminRB.Size = new Size(78, 25);
+            AdminRB.TabIndex = 17;
+            AdminRB.TabStop = true;
+            AdminRB.Text = "Admin";
+            AdminRB.UseVisualStyleBackColor = true;
             // 
             // frmRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(381, 644);
+            Controls.Add(AdminRB);
+            Controls.Add(ClientRB);
             Controls.Add(clearBTN);
             Controls.Add(registerBTN);
             Controls.Add(showCheckBox);
@@ -216,13 +224,11 @@
             Controls.Add(label3);
             Controls.Add(label6);
             Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(TxtPassword);
             Controls.Add(TxtFirstname);
             Controls.Add(TxtUsername);
-            Controls.Add(TxtPhonenum);
             Controls.Add(TxtLastname);
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmRegister";
@@ -245,9 +251,9 @@
         private TextBox TxtLastname;
         private TextBox TxtFirstname;
         private Label label6;
-        private TextBox TxtPhonenum;
-        private Label label7;
         private TextBox TxtUsername;
         private Label label8;
+        private RadioButton ClientRB;
+        private RadioButton AdminRB;
     }
 }

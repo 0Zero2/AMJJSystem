@@ -31,7 +31,6 @@
             DateAndTime = new DateTimePicker();
             WeightBox = new ComboBox();
             SizeBox = new ComboBox();
-            DeleteAllBTN = new Button();
             DeleteBTN = new Button();
             UpdateBTN = new Button();
             CreateBTN = new Button();
@@ -58,28 +57,28 @@
             NameItemBox = new ComboBox();
             label13 = new Label();
             ReadBTN = new Button();
-            HomeBTN = new Button();
-            ReceiveBTN = new Button();
-            PickupBTN = new Button();
             DeliveryTableView = new DataGridView();
             TxtAddress = new TextBox();
             label14 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)DeliveryTableView).BeginInit();
             SuspendLayout();
             // 
             // DateAndTime
             // 
             DateAndTime.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DateAndTime.ImeMode = ImeMode.Alpha;
             DateAndTime.Location = new Point(339, 544);
             DateAndTime.Name = "DateAndTime";
             DateAndTime.Size = new Size(239, 26);
             DateAndTime.TabIndex = 56;
-            DateAndTime.Value = new DateTime(2023, 5, 18, 19, 40, 35, 0);
+            DateAndTime.Value = new DateTime(2023, 5, 20, 8, 38, 19, 0);
             // 
             // WeightBox
             // 
             WeightBox.FormattingEnabled = true;
-            WeightBox.Items.AddRange(new object[] { "dawd", "gvqaw", "gar", "fsef", "hrtsef", "aef", "awd" });
+            WeightBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6" });
             WeightBox.Location = new Point(685, 580);
             WeightBox.Name = "WeightBox";
             WeightBox.Size = new Size(137, 23);
@@ -88,20 +87,11 @@
             // SizeBox
             // 
             SizeBox.FormattingEnabled = true;
-            SizeBox.Items.AddRange(new object[] { "cwad", "awd", "afw", "awd", "awd" });
+            SizeBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6" });
             SizeBox.Location = new Point(685, 536);
             SizeBox.Name = "SizeBox";
             SizeBox.Size = new Size(137, 23);
             SizeBox.TabIndex = 54;
-            // 
-            // DeleteAllBTN
-            // 
-            DeleteAllBTN.Location = new Point(533, 590);
-            DeleteAllBTN.Name = "DeleteAllBTN";
-            DeleteAllBTN.Size = new Size(87, 23);
-            DeleteAllBTN.TabIndex = 53;
-            DeleteAllBTN.Text = "DELETE ALL";
-            DeleteAllBTN.UseVisualStyleBackColor = true;
             // 
             // DeleteBTN
             // 
@@ -109,7 +99,7 @@
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(75, 23);
             DeleteBTN.TabIndex = 52;
-            DeleteBTN.Text = "Delete";
+            DeleteBTN.Text = "DELETE";
             DeleteBTN.UseVisualStyleBackColor = true;
             DeleteBTN.Click += DeleteBTN_Click;
             // 
@@ -208,7 +198,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(420, 410);
+            label5.Location = new Point(256, 410);
             label5.Name = "label5";
             label5.Size = new Size(86, 15);
             label5.TabIndex = 41;
@@ -217,7 +207,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(256, 410);
+            label3.Location = new Point(418, 410);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 40;
@@ -260,7 +250,7 @@
             // TxtDriverPhonenumber
             // 
             TxtDriverPhonenumber.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtDriverPhonenumber.Location = new Point(420, 428);
+            TxtDriverPhonenumber.Location = new Point(256, 428);
             TxtDriverPhonenumber.Multiline = true;
             TxtDriverPhonenumber.Name = "TxtDriverPhonenumber";
             TxtDriverPhonenumber.Size = new Size(158, 31);
@@ -278,7 +268,7 @@
             // TxtPlate
             // 
             TxtPlate.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtPlate.Location = new Point(256, 428);
+            TxtPlate.Location = new Point(418, 428);
             TxtPlate.Multiline = true;
             TxtPlate.Name = "TxtPlate";
             TxtPlate.Size = new Size(158, 31);
@@ -324,12 +314,12 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Times New Roman", 42F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(194, 331);
+            label13.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(63, 331);
             label13.Name = "label13";
-            label13.Size = new Size(743, 64);
+            label13.Size = new Size(1048, 55);
             label13.TabIndex = 39;
-            label13.Text = "AMJJ DELIVERY LOGISTICS";
+            label13.Text = "AMJJ DELIVERY/PICK-UP LOGISTICS RECORD";
             // 
             // ReadBTN
             // 
@@ -337,47 +327,23 @@
             ReadBTN.Name = "ReadBTN";
             ReadBTN.Size = new Size(75, 23);
             ReadBTN.TabIndex = 50;
-            ReadBTN.Text = "READ";
+            ReadBTN.Text = "REFRESH";
             ReadBTN.UseVisualStyleBackColor = true;
             ReadBTN.Click += ReadBTN_Click;
             // 
-            // HomeBTN
-            // 
-            HomeBTN.Location = new Point(825, 629);
-            HomeBTN.Name = "HomeBTN";
-            HomeBTN.Size = new Size(105, 31);
-            HomeBTN.TabIndex = 53;
-            HomeBTN.Text = "HOME";
-            HomeBTN.UseVisualStyleBackColor = true;
-            // 
-            // ReceiveBTN
-            // 
-            ReceiveBTN.Location = new Point(936, 629);
-            ReceiveBTN.Name = "ReceiveBTN";
-            ReceiveBTN.Size = new Size(105, 31);
-            ReceiveBTN.TabIndex = 53;
-            ReceiveBTN.Text = "RECEIVE";
-            ReceiveBTN.UseVisualStyleBackColor = true;
-            // 
-            // PickupBTN
-            // 
-            PickupBTN.Location = new Point(1047, 629);
-            PickupBTN.Name = "PickupBTN";
-            PickupBTN.Size = new Size(105, 31);
-            PickupBTN.TabIndex = 53;
-            PickupBTN.Text = "PICKUP";
-            PickupBTN.UseVisualStyleBackColor = true;
-            // 
             // DeliveryTableView
             // 
+            DeliveryTableView.AllowUserToAddRows = false;
+            DeliveryTableView.AllowUserToDeleteRows = false;
             DeliveryTableView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DeliveryTableView.Location = new Point(4, 3);
+            DeliveryTableView.Location = new Point(12, 3);
             DeliveryTableView.Margin = new Padding(3, 2, 3, 2);
             DeliveryTableView.Name = "DeliveryTableView";
             DeliveryTableView.RowHeadersWidth = 51;
             DeliveryTableView.RowTemplate.Height = 29;
             DeliveryTableView.Size = new Size(1152, 326);
             DeliveryTableView.TabIndex = 57;
+            DeliveryTableView.CellClick += DeliveryTableView_CellClick;
             // 
             // TxtAddress
             // 
@@ -397,21 +363,41 @@
             label14.TabIndex = 49;
             label14.Text = "Address";
             // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(644, 633);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(94, 19);
+            radioButton1.TabIndex = 58;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(744, 633);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(94, 19);
+            radioButton2.TabIndex = 58;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "radioButton1";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
             // frmDelivery
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1166, 681);
+            ClientSize = new Size(1172, 681);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
             Controls.Add(DeliveryTableView);
             Controls.Add(DateAndTime);
             Controls.Add(WeightBox);
             Controls.Add(NameItemBox);
             Controls.Add(SizeBox);
-            Controls.Add(PickupBTN);
-            Controls.Add(ReceiveBTN);
-            Controls.Add(HomeBTN);
-            Controls.Add(DeleteAllBTN);
             Controls.Add(DeleteBTN);
             Controls.Add(UpdateBTN);
             Controls.Add(ReadBTN);
@@ -440,7 +426,7 @@
             Controls.Add(TxtCompany);
             Controls.Add(TxtDriver);
             Name = "frmDelivery";
-            Text = "DELIVERY System";
+            Text = " ";
             Load += frmDelivery_Load;
             ((System.ComponentModel.ISupportInitialize)DeliveryTableView).EndInit();
             ResumeLayout(false);
@@ -451,7 +437,6 @@
         private DateTimePicker DateAndTime;
         private ComboBox WeightBox;
         private ComboBox SizeBox;
-        private Button DeleteAllBTN;
         private Button DeleteBTN;
         private Button UpdateBTN;
         private Button CreateBTN;
@@ -478,11 +463,10 @@
         private ComboBox NameItemBox;
         private Label label13;
         private Button ReadBTN;
-        private Button HomeBTN;
-        private Button ReceiveBTN;
-        private Button PickupBTN;
         private DataGridView DeliveryTableView;
         private TextBox TxtAddress;
         private Label label14;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
     }
 }

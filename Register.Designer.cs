@@ -44,6 +44,7 @@
             label8 = new Label();
             ClientRB = new RadioButton();
             AdminRB = new RadioButton();
+            DriverLabel = new Label();
             SuspendLayout();
             // 
             // clearBTN
@@ -203,11 +204,23 @@
             AdminRB.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             AdminRB.Location = new Point(57, 359);
             AdminRB.Name = "AdminRB";
-            AdminRB.Size = new Size(78, 25);
+            AdminRB.Size = new Size(74, 25);
             AdminRB.TabIndex = 17;
             AdminRB.TabStop = true;
-            AdminRB.Text = "Admin";
+            AdminRB.Text = "Driver";
             AdminRB.UseVisualStyleBackColor = true;
+            // 
+            // DriverLabel
+            // 
+            DriverLabel.AutoSize = true;
+            DriverLabel.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            DriverLabel.ForeColor = Color.FromArgb(192, 0, 0);
+            DriverLabel.Location = new Point(166, 599);
+            DriverLabel.Name = "DriverLabel";
+            DriverLabel.Size = new Size(46, 17);
+            DriverLabel.TabIndex = 10;
+            DriverLabel.Text = "Driver";
+            DriverLabel.Click += DriverLabel_Click;
             // 
             // frmRegister
             // 
@@ -219,6 +232,7 @@
             Controls.Add(clearBTN);
             Controls.Add(registerBTN);
             Controls.Add(showCheckBox);
+            Controls.Add(DriverLabel);
             Controls.Add(loginLabel);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -255,5 +269,6 @@
         private Label label8;
         private RadioButton ClientRB;
         private RadioButton AdminRB;
+        private Label DriverLabel;
     }
 }

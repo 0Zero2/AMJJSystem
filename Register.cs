@@ -93,5 +93,11 @@ namespace AMJJSystem
             Login.Show();
             this.Hide();
         }
+        private void DriverLabel_Click(object sender, EventArgs e)
+        {
+            frmAdmin Driver = new frmAdmin();
+            Driver.Show();
+            this.Hide();
+        }
     }
 }

@@ -35,24 +35,30 @@ namespace AMJJSystem
 
         private void DeliveryPickupBTN_Click(object sender, EventArgs e)
         {
-            frmDelivery Dr = new frmDelivery();
+            frmDeliveryPickup Dr = new frmDeliveryPickup();
             Dr.Show();
             this.Hide();
         }
 
         private void CompanyBTN_Click(object sender, EventArgs e)
         {
-
+            frmClientCompany CC = new frmClientCompany();
+            CC.Show();
+            this.Hide();
         }
 
         private void DriverBTN_Click(object sender, EventArgs e)
         {
-
+            frmDriver driver = new frmDriver();
+            driver.Show();
+            this.Hide();
         }
 
         private void ItemBTN_Click(object sender, EventArgs e)
         {
-
+            frmProduct item = new frmProduct();
+            item.Show();
+            this.Hide();
         }
     }
 }

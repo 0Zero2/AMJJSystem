@@ -14,9 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AMJJSystem
 {
-    public partial class frmDelivery : Form
+    public partial class frmDeliveryPickup : Form
     {
-        public frmDelivery()
+        public frmDeliveryPickup()
         {
             InitializeComponent();
         }
@@ -152,6 +152,13 @@ namespace AMJJSystem
                 WeightBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Weight"].FormattedValue.ToString();
                 TxtRemarks.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Remarks"].FormattedValue.ToString();
             }
+        }
+
+        private void HomeBTN_Click(object sender, EventArgs e)
+        {
+            frmDashboard Db = new frmDashboard();
+            Db.Show();
+            this.Hide();
         }
     }
 }

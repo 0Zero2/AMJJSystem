@@ -11,7 +11,7 @@ namespace AMJJSystem
             InitializeComponent();
 
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DBLogin;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-1968EC0O\\SQLEXPRESS;Initial Catalog=DBuser;Integrated Security=True");
         private void loginBTN_Click(object sender, EventArgs e)
         {
             if (TxtUsername.Text!= "" && TxtPassword.Text!="")

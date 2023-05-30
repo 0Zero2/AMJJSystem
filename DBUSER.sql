@@ -1,10 +1,11 @@
-USE DBuser
+CREATE DATABASE DBLogin;
+USE DBLogin;
 
 CREATE TABLE TBL_Register(
 User_ID int PRIMARY KEY,
 First_Name varchar(255) NOT NULL,
 Last_Name varchar (255) NOT NULL,
-Phone_Number int,
+Authority int,
 Username varchar(255) NOT NULL,
 Password varchar (255) NOT NULL)
 

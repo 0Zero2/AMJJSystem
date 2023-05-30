@@ -23,12 +23,12 @@ namespace AMJJSystem
         {
             try
             {
-                if (TxtFirstname.Text!=""&& TxtLastname.Text!="" && TxtUsername.Text!= "" && TxtPassword.Text!="")
+                if (TxtFirstname.Text != "" && TxtLastname.Text != "" && TxtUsername.Text != "" && TxtPassword.Text != "")
                 {
                     int v = check(TxtUsername.Text);
-                    if (v != 1) 
-                    { 
-                    con.Open();
+                    if (v != 1)
+                    {
+                        con.Open();
                         SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Register (First_Name,Last_Name,Username,Password) VALUES (@First_Name,@Last_Name,@Username,@Password)", con);
                         cmd.Parameters.AddWithValue("@First_Name", TxtFirstname.Text);
                         cmd.Parameters.AddWithValue("@Last_Name", TxtLastname.Text);
@@ -52,7 +52,7 @@ namespace AMJJSystem
                     MessageBox.Show("Fill the blanks!");
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -91,6 +91,12 @@ namespace AMJJSystem
         {
             frmLogin Login = new frmLogin();
             Login.Show();
+            this.Hide();
+        }
+        private void DriverLabel_Click(object sender, EventArgs e)
+        {
+            frmAdmin Driver = new frmAdmin();
+            Driver.Show();
             this.Hide();
         }
     }

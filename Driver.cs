@@ -10,16 +10,23 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class frmPickup : Form
+    public partial class frmDriver : Form
     {
-        public frmPickup()
+        public frmDriver()
         {
             InitializeComponent();
         }
 
-        private void Form6_Load(object sender, EventArgs e)
+        private void Driver_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void HomeBTN_Click(object sender, EventArgs e)
+        {
+            frmDashboard Db = new frmDashboard();
+            Db.Show();
+            this.Hide();
         }
     }
 }

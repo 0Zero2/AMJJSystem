@@ -54,9 +54,9 @@
             label1.Font = new Font("Times New Roman", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(141, 191);
             label1.Name = "label1";
-            label1.Size = new Size(104, 42);
+            label1.Size = new Size(87, 42);
             label1.TabIndex = 1;
-            label1.Text = "Login";
+            label1.Text = "User";
             // 
             // label2
             // 

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using Microsoft.VisualBasic;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Linq.Expressions;
 
 namespace AMJJSystem
 {
@@ -19,6 +20,7 @@ namespace AMJJSystem
         public frmDeliveryPickup()
         {
             InitializeComponent();
+            FillComboBox();
         }
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_DeliveryPickup;Integrated Security=True");
         string selectedDeliveryID = "";
@@ -26,11 +28,11 @@ namespace AMJJSystem
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Delivery (Name_of_Driver,Plate_Number,Address,Phone_Number_of_Driver,Name_of_Client_Company,Name_of_Client,Phone_Number_of_Client,Date_and_Time,Name_of_Item,Quantity,Size,Weight,Remarks) VALUES (@Name_of_Driver,@Plate_Number,@Address,@Phone_Number_of_Driver,@Name_of_Client_Company,@Name_of_Client,@Phone_Number_of_Client,@Date_and_Time,@Name_of_Item,@Quantity,@Size,@Weight,@Remarks)", con);
-            cmd.Parameters.AddWithValue("@Name_of_Driver", TxtDriver.Text);
+            cmd.Parameters.AddWithValue("@Name_of_Driver", DriverComboBox.Text);
             cmd.Parameters.AddWithValue("@Plate_Number", TxtPlate.Text);
             cmd.Parameters.AddWithValue("@Address", TxtAddress.Text);
             cmd.Parameters.AddWithValue("@Phone_Number_of_Driver", TxtDriverPhonenumber.Text);
-            cmd.Parameters.AddWithValue("@Name_of_Client_Company", TxtCompany.Text);
+            cmd.Parameters.AddWithValue("@Name_of_Client_Company", ClientCompComboBox.Text);
             cmd.Parameters.AddWithValue("@Name_of_Client", TxtContact.Text);
             cmd.Parameters.AddWithValue("@Phone_Number_of_Client", TxtCompanynumber.Text);
             cmd.Parameters.AddWithValue("@Date_and_Time", DateAndTime.Value);
@@ -54,11 +56,11 @@ namespace AMJJSystem
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
                     cmd.Parameters.AddWithValue("@Delivery_ID", selectedDeliveryID);
-                    cmd.Parameters.AddWithValue("@Name_of_Driver", TxtDriver.Text);
+                    cmd.Parameters.AddWithValue("@Name_of_Driver", DriverComboBox.Text);
                     cmd.Parameters.AddWithValue("@Plate_Number", TxtPlate.Text);
                     cmd.Parameters.AddWithValue("@Address", TxtAddress.Text);
                     cmd.Parameters.AddWithValue("@Phone_Number_of_Driver", TxtDriverPhonenumber.Text);
-                    cmd.Parameters.AddWithValue("@Name_of_Client_Company", TxtCompany.Text);
+                    cmd.Parameters.AddWithValue("@Name_of_Client_Company", ClientCompComboBox.Text);
                     cmd.Parameters.AddWithValue("@Name_of_Client", TxtContact.Text);
                     cmd.Parameters.AddWithValue("@Phone_Number_of_Client", TxtCompanynumber.Text);
                     cmd.Parameters.AddWithValue("@Date_and_Time", DateAndTime.Value);
@@ -112,15 +114,27 @@ namespace AMJJSystem
             sda.Fill(dt);
             DeliveryTableView.DataSource = dt;
         }
-        private void ReadBTN_Click(object sender, EventArgs e)
+
+        void FillComboBox()
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            DeliveryTableView.DataSource = dt;
-            con.Close();
+            string sql = "select * from TBL_ClientCompany";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader myreader;
+            try
+            {
+                con.Open();
+                myreader = cmd.ExecuteReader();
+
+                while (myreader.Read())
+                {
+                    string sname = myreader.GetString(1);
+                    ClientCompComboBox.Items.Add(sname);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmDelivery_Load(object sender, EventArgs e)
@@ -132,6 +146,13 @@ namespace AMJJSystem
             sda.Fill(dt);
             DeliveryTableView.DataSource = dt;
             con.Close();
+
+            DPlistView.View = View.Details;
+
+            DPlistView.Columns.Add("Item", 150);
+            DPlistView.Columns.Add("Quantity", 150);
+            DPlistView.Columns.Add("Size", 150);
+            DPlistView.Columns.Add("Weight", 150);
         }
         private void DeliveryTableView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -140,11 +161,11 @@ namespace AMJJSystem
             {
                 DeliveryTableView.CurrentRow.Selected = true;
                 selectedDeliveryID = DeliveryTableView.Rows[e.RowIndex].Cells["Delivery_ID"].FormattedValue.ToString();
-                TxtDriver.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Driver"].FormattedValue.ToString();
+                DriverComboBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Driver"].FormattedValue.ToString();
                 TxtPlate.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Plate_Number"].FormattedValue.ToString();
                 TxtAddress.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Address"].FormattedValue.ToString();
                 TxtDriverPhonenumber.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Phone_Number_of_Driver"].FormattedValue.ToString();
-                TxtCompany.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Client_Company"].FormattedValue.ToString();
+                ClientCompComboBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Client_Company"].FormattedValue.ToString();
                 TxtContact.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Client"].FormattedValue.ToString();
                 TxtCompanynumber.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Phone_Number_of_Client"].FormattedValue.ToString();
                 DateAndTime.Value = DateTime.Parse(DeliveryTableView.Rows[e.RowIndex].Cells["Date_and_Time"].FormattedValue.ToString());
@@ -161,6 +182,67 @@ namespace AMJJSystem
             frmDashboard Db = new frmDashboard();
             Db.Show();
             this.Hide();
+        }
+
+        private void RefreshBTN_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            DeliveryTableView.DataSource = dt;
+            con.Close();
+        }
+
+        private void ClientCompComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "select * from TBL_ClientCompany where Name_of_Company = '" + ClientCompComboBox + "';";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader myreader;
+            try
+            {
+                con.Open();
+                myreader = cmd.ExecuteReader();
+
+                while (myreader.Read())
+                {
+                    string drivername = myreader.GetString(0);
+                    string phonenumber = myreader.GetInt32(1).ToString();
+                    string platenumber = myreader.GetString(2);
+                    string contactperson = myreader.GetString(3);
+                    string contactnumber = myreader.GetInt32(4).ToString();
+                    DriverComboBox.Text = drivername;
+                    TxtDriverPhonenumber.Text = phonenumber;
+                    TxtPlate.Text = platenumber;
+                    TxtContact.Text = contactperson;
+                    TxtCompanynumber.Text = contactnumber;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void AddBTN_Click(object sender, EventArgs e)
+        {
+            add(NameItemBox.SelectedItem.ToString(), TxtQuantity.Text, SizeBox.SelectedItem.ToString(), WeightBox.SelectedItem.ToString());
+        }
+
+        private void add(String item, String quantity, String size, String weight)
+        {
+            string[] row = { item, quantity, size, weight };
+            ListViewItem items = new ListViewItem(row); 
+
+            DPlistView.Items.Add(items);
+        }
+
+        private void ClearBTN_Click(object sender, EventArgs e)
+        {
+            DPlistView.Items.Clear();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AMJJSystem
 {
-    partial class frmDelivery
+    partial class frmDeliveryPickup
     {
         /// <summary>
         /// Required designer variable.
@@ -62,6 +62,7 @@
             label14 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
+            HomeBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)DeliveryTableView).BeginInit();
             SuspendLayout();
             // 
@@ -366,7 +367,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(644, 633);
+            radioButton1.Location = new Point(560, 633);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(94, 19);
             radioButton1.TabIndex = 58;
@@ -377,7 +378,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(744, 633);
+            radioButton2.Location = new Point(685, 633);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(94, 19);
             radioButton2.TabIndex = 58;
@@ -385,12 +386,23 @@
             radioButton2.Text = "radioButton1";
             radioButton2.UseVisualStyleBackColor = true;
             // 
-            // frmDelivery
+            // HomeBTN
+            // 
+            HomeBTN.Location = new Point(952, 646);
+            HomeBTN.Name = "HomeBTN";
+            HomeBTN.Size = new Size(75, 23);
+            HomeBTN.TabIndex = 59;
+            HomeBTN.Text = "HOME";
+            HomeBTN.UseVisualStyleBackColor = true;
+            HomeBTN.Click += HomeBTN_Click;
+            // 
+            // frmDeliveryPickup
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1172, 681);
+            Controls.Add(HomeBTN);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(DeliveryTableView);
@@ -425,7 +437,7 @@
             Controls.Add(TxtPlate);
             Controls.Add(TxtCompany);
             Controls.Add(TxtDriver);
-            Name = "frmDelivery";
+            Name = "frmDeliveryPickup";
             Text = " ";
             Load += frmDelivery_Load;
             ((System.ComponentModel.ISupportInitialize)DeliveryTableView).EndInit();
@@ -468,5 +480,6 @@
         private Label label14;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
+        private Button HomeBTN;
     }
 }

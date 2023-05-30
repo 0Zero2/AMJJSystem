@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class Driver : Form
+    public partial class frmDriver : Form
     {
-        public Driver()
+        public frmDriver()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace AMJJSystem
         private void Driver_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void HomeBTN_Click(object sender, EventArgs e)
+        {
+            frmDashboard Db = new frmDashboard();
+            Db.Show();
+            this.Hide();
         }
     }
 }

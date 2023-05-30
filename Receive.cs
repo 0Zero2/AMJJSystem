@@ -16,5 +16,12 @@ namespace AMJJSystem
         {
             InitializeComponent();
         }
+
+        private void HomeBTN_Click(object sender, EventArgs e)
+        {
+            frmDashboard Db = new frmDashboard();
+            Db.Show();
+            this.Hide();
+        }
     }
 }

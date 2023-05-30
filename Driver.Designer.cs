@@ -1,6 +1,6 @@
 ﻿namespace AMJJSystem
 {
-    partial class Driver
+    partial class frmDriver
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,7 @@
             RefreshBTN = new Button();
             UpdateBTN = new Button();
             DeleteBTN = new Button();
+            HomeBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)DriverInfoTableView).BeginInit();
             SuspendLayout();
             // 
@@ -236,11 +237,22 @@
             DeleteBTN.Text = "DELETE";
             DeleteBTN.UseVisualStyleBackColor = true;
             // 
-            // Driver
+            // HomeBTN
+            // 
+            HomeBTN.Location = new Point(152, 535);
+            HomeBTN.Name = "HomeBTN";
+            HomeBTN.Size = new Size(105, 31);
+            HomeBTN.TabIndex = 90;
+            HomeBTN.Text = "HOME";
+            HomeBTN.UseVisualStyleBackColor = true;
+            HomeBTN.Click += HomeBTN_Click;
+            // 
+            // frmDriver
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1453, 597);
+            Controls.Add(HomeBTN);
             Controls.Add(DeleteBTN);
             Controls.Add(UpdateBTN);
             Controls.Add(RefreshBTN);
@@ -263,7 +275,7 @@
             Controls.Add(TxtContactNumber);
             Controls.Add(TxtNameofCompany);
             Controls.Add(label1);
-            Name = "Driver";
+            Name = "frmDriver";
             Text = "Driver";
             Load += Driver_Load;
             ((System.ComponentModel.ISupportInitialize)DriverInfoTableView).EndInit();
@@ -295,5 +307,6 @@
         private Button RefreshBTN;
         private Button UpdateBTN;
         private Button DeleteBTN;
+        private Button HomeBTN;
     }
 }

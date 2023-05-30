@@ -96,7 +96,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(192, 0, 0);
             label3.Location = new Point(184, 515);
             label3.Name = "label3";
             label3.Size = new Size(58, 19);

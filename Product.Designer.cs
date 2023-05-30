@@ -1,6 +1,6 @@
 ﻿namespace AMJJSystem
 {
-    partial class Product
+    partial class frmProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,7 @@
             RefreshBTN = new Button();
             UpdateBTN = new Button();
             DeleteBTN = new Button();
+            HomeBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)CompProductTableView).BeginInit();
             SuspendLayout();
             // 
@@ -182,11 +183,22 @@
             DeleteBTN.Text = "DELETE";
             DeleteBTN.UseVisualStyleBackColor = true;
             // 
-            // Product
+            // HomeBTN
+            // 
+            HomeBTN.Location = new Point(172, 481);
+            HomeBTN.Name = "HomeBTN";
+            HomeBTN.Size = new Size(105, 31);
+            HomeBTN.TabIndex = 90;
+            HomeBTN.Text = "HOME";
+            HomeBTN.UseVisualStyleBackColor = true;
+            HomeBTN.Click += HomeBTN_Click;
+            // 
+            // frmProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1138, 540);
+            Controls.Add(HomeBTN);
             Controls.Add(DeleteBTN);
             Controls.Add(UpdateBTN);
             Controls.Add(RefreshBTN);
@@ -203,7 +215,7 @@
             Controls.Add(TxtNameOfItem);
             Controls.Add(TxtItemID);
             Controls.Add(label1);
-            Name = "Product";
+            Name = "frmProduct";
             Text = "Product";
             ((System.ComponentModel.ISupportInitialize)CompProductTableView).EndInit();
             ResumeLayout(false);
@@ -228,5 +240,6 @@
         private Button RefreshBTN;
         private Button UpdateBTN;
         private Button DeleteBTN;
+        private Button HomeBTN;
     }
 }

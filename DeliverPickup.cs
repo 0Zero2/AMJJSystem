@@ -21,6 +21,7 @@ namespace AMJJSystem
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_DeliveryPickup;Integrated Security=True");
+        string selectedDeliveryID = "";
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -52,7 +53,7 @@ namespace AMJJSystem
 
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@Delivery_ID", DeliveryTableView.Rows[DeliveryTableView.SelectedCells[0].ColumnIndex].Cells["Delivery_ID"].Value);
+                    cmd.Parameters.AddWithValue("@Delivery_ID", selectedDeliveryID);
                     cmd.Parameters.AddWithValue("@Name_of_Driver", TxtDriver.Text);
                     cmd.Parameters.AddWithValue("@Plate_Number", TxtPlate.Text);
                     cmd.Parameters.AddWithValue("@Address", TxtAddress.Text);
@@ -90,7 +91,7 @@ namespace AMJJSystem
 
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@Delivery_ID", DeliveryTableView.Rows[DeliveryTableView.SelectedCells[0].ColumnIndex].Cells["Delivery_ID"].Value);
+                    cmd.Parameters.AddWithValue("@Delivery_ID", selectedDeliveryID);
                     int rowsAffected = cmd.ExecuteNonQuery();
                     con.Close();
 
@@ -138,6 +139,7 @@ namespace AMJJSystem
             if (DeliveryTableView.SelectedCells.Count > 0)
             {
                 DeliveryTableView.CurrentRow.Selected = true;
+                selectedDeliveryID = DeliveryTableView.Rows[e.RowIndex].Cells["Delivery_ID"].FormattedValue.ToString();
                 TxtDriver.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Driver"].FormattedValue.ToString();
                 TxtPlate.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Plate_Number"].FormattedValue.ToString();
                 TxtAddress.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Address"].FormattedValue.ToString();

@@ -60,52 +60,53 @@
             // 
             // TxtItemID
             // 
-            TxtItemID.Location = new Point(149, 146);
+            TxtItemID.Location = new Point(50, 120);
             TxtItemID.Name = "TxtItemID";
-            TxtItemID.Size = new Size(100, 23);
+            TxtItemID.Size = new Size(120, 23);
             TxtItemID.TabIndex = 1;
             // 
             // TxtNameOfItem
             // 
-            TxtNameOfItem.Location = new Point(50, 213);
+            TxtNameOfItem.Location = new Point(50, 171);
             TxtNameOfItem.Name = "TxtNameOfItem";
-            TxtNameOfItem.Size = new Size(100, 23);
+            TxtNameOfItem.Size = new Size(247, 23);
             TxtNameOfItem.TabIndex = 2;
             // 
             // TxtSize
             // 
-            TxtSize.Location = new Point(249, 213);
+            TxtSize.Location = new Point(50, 217);
             TxtSize.Name = "TxtSize";
-            TxtSize.Size = new Size(100, 23);
+            TxtSize.Size = new Size(247, 23);
             TxtSize.TabIndex = 3;
             // 
             // TxtWeight
             // 
-            TxtWeight.Location = new Point(50, 309);
+            TxtWeight.Location = new Point(50, 273);
             TxtWeight.Name = "TxtWeight";
-            TxtWeight.Size = new Size(100, 23);
+            TxtWeight.Size = new Size(247, 23);
             TxtWeight.TabIndex = 4;
             // 
             // Txt
             // 
-            Txt.Location = new Point(249, 309);
+            Txt.Location = new Point(50, 317);
             Txt.Name = "Txt";
             Txt.Size = new Size(100, 23);
             Txt.TabIndex = 8;
             // 
             // CreateBTN
             // 
-            CreateBTN.Location = new Point(30, 428);
+            CreateBTN.Location = new Point(45, 384);
             CreateBTN.Name = "CreateBTN";
             CreateBTN.Size = new Size(75, 23);
             CreateBTN.TabIndex = 9;
             CreateBTN.Text = "CREATE";
             CreateBTN.UseVisualStyleBackColor = true;
+            CreateBTN.Click += CreateBTN_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(172, 128);
+            label2.Location = new Point(50, 102);
             label2.Name = "label2";
             label2.Size = new Size(45, 15);
             label2.TabIndex = 10;
@@ -114,7 +115,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(60, 195);
+            label3.Location = new Point(50, 153);
             label3.Name = "label3";
             label3.Size = new Size(80, 15);
             label3.TabIndex = 11;
@@ -123,7 +124,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(272, 195);
+            label4.Location = new Point(50, 199);
             label4.Name = "label4";
             label4.Size = new Size(27, 15);
             label4.TabIndex = 12;
@@ -132,7 +133,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(60, 291);
+            label5.Location = new Point(45, 255);
             label5.Name = "label5";
             label5.Size = new Size(45, 15);
             label5.TabIndex = 13;
@@ -141,7 +142,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(261, 291);
+            label8.Location = new Point(50, 299);
             label8.Name = "label8";
             label8.Size = new Size(38, 15);
             label8.TabIndex = 16;
@@ -150,42 +151,46 @@
             // CompProductTableView
             // 
             CompProductTableView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CompProductTableView.Location = new Point(475, 12);
+            CompProductTableView.Location = new Point(493, 6);
             CompProductTableView.Name = "CompProductTableView";
             CompProductTableView.RowTemplate.Height = 25;
-            CompProductTableView.Size = new Size(651, 524);
+            CompProductTableView.Size = new Size(953, 598);
             CompProductTableView.TabIndex = 17;
+            CompProductTableView.CellClick += CompProductTableView_CellClick;
             // 
             // RefreshBTN
             // 
-            RefreshBTN.Location = new Point(129, 428);
+            RefreshBTN.Location = new Point(144, 384);
             RefreshBTN.Name = "RefreshBTN";
             RefreshBTN.Size = new Size(75, 23);
             RefreshBTN.TabIndex = 18;
             RefreshBTN.Text = "REFRESH";
             RefreshBTN.UseVisualStyleBackColor = true;
+            RefreshBTN.Click += RefreshBTN_Click;
             // 
             // UpdateBTN
             // 
-            UpdateBTN.Location = new Point(224, 428);
+            UpdateBTN.Location = new Point(239, 384);
             UpdateBTN.Name = "UpdateBTN";
             UpdateBTN.Size = new Size(75, 23);
             UpdateBTN.TabIndex = 19;
             UpdateBTN.Text = "UPDATE";
             UpdateBTN.UseVisualStyleBackColor = true;
+            UpdateBTN.Click += UpdateBTN_Click;
             // 
             // DeleteBTN
             // 
-            DeleteBTN.Location = new Point(324, 428);
+            DeleteBTN.Location = new Point(339, 384);
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(75, 23);
             DeleteBTN.TabIndex = 20;
             DeleteBTN.Text = "DELETE";
             DeleteBTN.UseVisualStyleBackColor = true;
+            DeleteBTN.Click += DeleteBTN_Click;
             // 
             // HomeBTN
             // 
-            HomeBTN.Location = new Point(172, 481);
+            HomeBTN.Location = new Point(178, 463);
             HomeBTN.Name = "HomeBTN";
             HomeBTN.Size = new Size(105, 31);
             HomeBTN.TabIndex = 90;
@@ -197,7 +202,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1138, 540);
+            ClientSize = new Size(1443, 616);
             Controls.Add(HomeBTN);
             Controls.Add(DeleteBTN);
             Controls.Add(UpdateBTN);

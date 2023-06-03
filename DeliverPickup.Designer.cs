@@ -51,18 +51,21 @@
             TxtDriverPhonenumber = new TextBox();
             TxtContact = new TextBox();
             TxtPlate = new TextBox();
-            TxtCompany = new TextBox();
-            TxtDriver = new TextBox();
             label12 = new Label();
             NameItemBox = new ComboBox();
             label13 = new Label();
-            ReadBTN = new Button();
+            RefreshBTN = new Button();
             DeliveryTableView = new DataGridView();
             TxtAddress = new TextBox();
             label14 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             HomeBTN = new Button();
+            ClientCompComboBox = new ComboBox();
+            DriverComboBox = new ComboBox();
+            DPlistView = new ListView();
+            AddBTN = new Button();
+            ClearBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)DeliveryTableView).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +73,7 @@
             // 
             DateAndTime.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DateAndTime.ImeMode = ImeMode.Alpha;
-            DateAndTime.Location = new Point(339, 544);
+            DateAndTime.Location = new Point(490, 578);
             DateAndTime.Name = "DateAndTime";
             DateAndTime.Size = new Size(239, 26);
             DateAndTime.TabIndex = 56;
@@ -80,7 +83,7 @@
             // 
             WeightBox.FormattingEnabled = true;
             WeightBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6" });
-            WeightBox.Location = new Point(685, 580);
+            WeightBox.Location = new Point(964, 576);
             WeightBox.Name = "WeightBox";
             WeightBox.Size = new Size(137, 23);
             WeightBox.TabIndex = 55;
@@ -89,14 +92,14 @@
             // 
             SizeBox.FormattingEnabled = true;
             SizeBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6" });
-            SizeBox.Location = new Point(685, 536);
+            SizeBox.Location = new Point(964, 532);
             SizeBox.Name = "SizeBox";
             SizeBox.Size = new Size(137, 23);
             SizeBox.TabIndex = 54;
             // 
             // DeleteBTN
             // 
-            DeleteBTN.Location = new Point(420, 590);
+            DeleteBTN.Location = new Point(741, 637);
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(75, 23);
             DeleteBTN.TabIndex = 52;
@@ -106,7 +109,7 @@
             // 
             // UpdateBTN
             // 
-            UpdateBTN.Location = new Point(298, 590);
+            UpdateBTN.Location = new Point(619, 637);
             UpdateBTN.Name = "UpdateBTN";
             UpdateBTN.Size = new Size(84, 23);
             UpdateBTN.TabIndex = 51;
@@ -116,7 +119,7 @@
             // 
             // CreateBTN
             // 
-            CreateBTN.Location = new Point(72, 590);
+            CreateBTN.Location = new Point(393, 637);
             CreateBTN.Name = "CreateBTN";
             CreateBTN.Size = new Size(75, 23);
             CreateBTN.TabIndex = 50;
@@ -127,7 +130,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(339, 520);
+            label10.Location = new Point(490, 557);
             label10.Name = "label10";
             label10.Size = new Size(83, 15);
             label10.TabIndex = 48;
@@ -136,7 +139,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(685, 518);
+            label8.Location = new Point(964, 514);
             label8.Name = "label8";
             label8.Size = new Size(27, 15);
             label8.TabIndex = 47;
@@ -145,7 +148,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(685, 562);
+            label9.Location = new Point(964, 558);
             label9.Name = "label9";
             label9.Size = new Size(45, 15);
             label9.TabIndex = 46;
@@ -154,7 +157,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(859, 403);
+            label6.Location = new Point(1118, 620);
             label6.Name = "label6";
             label6.Size = new Size(55, 15);
             label6.TabIndex = 45;
@@ -163,7 +166,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(286, 464);
+            label4.Location = new Point(407, 501);
             label4.Name = "label4";
             label4.Size = new Size(88, 15);
             label4.TabIndex = 49;
@@ -172,7 +175,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(46, 464);
+            label2.Location = new Point(197, 501);
             label2.Name = "label2";
             label2.Size = new Size(142, 15);
             label2.TabIndex = 44;
@@ -181,7 +184,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(685, 464);
+            label7.Location = new Point(964, 460);
             label7.Name = "label7";
             label7.Size = new Size(53, 15);
             label7.TabIndex = 43;
@@ -190,7 +193,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(496, 464);
+            label11.Location = new Point(579, 501);
             label11.Name = "label11";
             label11.Size = new Size(86, 15);
             label11.TabIndex = 42;
@@ -199,7 +202,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(256, 410);
+            label5.Location = new Point(407, 447);
             label5.Name = "label5";
             label5.Size = new Size(86, 15);
             label5.TabIndex = 41;
@@ -208,7 +211,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(418, 410);
+            label3.Location = new Point(579, 447);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 40;
@@ -217,7 +220,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 410);
+            label1.Location = new Point(197, 447);
             label1.Name = "label1";
             label1.Size = new Size(87, 15);
             label1.TabIndex = 39;
@@ -225,15 +228,15 @@
             // 
             // TxtRemarks
             // 
-            TxtRemarks.Location = new Point(859, 421);
+            TxtRemarks.Location = new Point(1118, 638);
             TxtRemarks.Multiline = true;
             TxtRemarks.Name = "TxtRemarks";
-            TxtRemarks.Size = new Size(264, 202);
+            TxtRemarks.Size = new Size(294, 31);
             TxtRemarks.TabIndex = 37;
             // 
             // TxtQuantity
             // 
-            TxtQuantity.Location = new Point(685, 482);
+            TxtQuantity.Location = new Point(964, 478);
             TxtQuantity.Multiline = true;
             TxtQuantity.Name = "TxtQuantity";
             TxtQuantity.Size = new Size(137, 31);
@@ -242,7 +245,7 @@
             // TxtCompanynumber
             // 
             TxtCompanynumber.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtCompanynumber.Location = new Point(496, 482);
+            TxtCompanynumber.Location = new Point(579, 519);
             TxtCompanynumber.Multiline = true;
             TxtCompanynumber.Name = "TxtCompanynumber";
             TxtCompanynumber.Size = new Size(158, 31);
@@ -251,52 +254,34 @@
             // TxtDriverPhonenumber
             // 
             TxtDriverPhonenumber.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtDriverPhonenumber.Location = new Point(256, 428);
+            TxtDriverPhonenumber.Location = new Point(407, 465);
             TxtDriverPhonenumber.Multiline = true;
             TxtDriverPhonenumber.Name = "TxtDriverPhonenumber";
-            TxtDriverPhonenumber.Size = new Size(158, 31);
+            TxtDriverPhonenumber.Size = new Size(166, 31);
             TxtDriverPhonenumber.TabIndex = 34;
             // 
             // TxtContact
             // 
             TxtContact.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtContact.Location = new Point(286, 482);
+            TxtContact.Location = new Point(407, 519);
             TxtContact.Multiline = true;
             TxtContact.Name = "TxtContact";
-            TxtContact.Size = new Size(204, 31);
+            TxtContact.Size = new Size(166, 31);
             TxtContact.TabIndex = 33;
             // 
             // TxtPlate
             // 
             TxtPlate.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtPlate.Location = new Point(418, 428);
+            TxtPlate.Location = new Point(579, 465);
             TxtPlate.Multiline = true;
             TxtPlate.Name = "TxtPlate";
             TxtPlate.Size = new Size(158, 31);
             TxtPlate.TabIndex = 32;
             // 
-            // TxtCompany
-            // 
-            TxtCompany.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtCompany.Location = new Point(46, 482);
-            TxtCompany.Multiline = true;
-            TxtCompany.Name = "TxtCompany";
-            TxtCompany.Size = new Size(234, 31);
-            TxtCompany.TabIndex = 31;
-            // 
-            // TxtDriver
-            // 
-            TxtDriver.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtDriver.Location = new Point(46, 428);
-            TxtDriver.Multiline = true;
-            TxtDriver.Name = "TxtDriver";
-            TxtDriver.Size = new Size(204, 31);
-            TxtDriver.TabIndex = 38;
-            // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(685, 409);
+            label12.Location = new Point(964, 405);
             label12.Name = "label12";
             label12.Size = new Size(80, 15);
             label12.TabIndex = 43;
@@ -307,7 +292,7 @@
             NameItemBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             NameItemBox.FormattingEnabled = true;
             NameItemBox.Items.AddRange(new object[] { "Nihonweld", "TEST", "A", "C", "V", "B", "G" });
-            NameItemBox.Location = new Point(685, 435);
+            NameItemBox.Location = new Point(964, 431);
             NameItemBox.Name = "NameItemBox";
             NameItemBox.Size = new Size(137, 27);
             NameItemBox.TabIndex = 54;
@@ -316,21 +301,21 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(63, 331);
+            label13.Location = new Point(210, 337);
             label13.Name = "label13";
             label13.Size = new Size(1048, 55);
             label13.TabIndex = 39;
             label13.Text = "AMJJ DELIVERY/PICK-UP LOGISTICS RECORD";
             // 
-            // ReadBTN
+            // RefreshBTN
             // 
-            ReadBTN.Location = new Point(183, 590);
-            ReadBTN.Name = "ReadBTN";
-            ReadBTN.Size = new Size(75, 23);
-            ReadBTN.TabIndex = 50;
-            ReadBTN.Text = "REFRESH";
-            ReadBTN.UseVisualStyleBackColor = true;
-            ReadBTN.Click += ReadBTN_Click;
+            RefreshBTN.Location = new Point(504, 637);
+            RefreshBTN.Name = "RefreshBTN";
+            RefreshBTN.Size = new Size(75, 23);
+            RefreshBTN.TabIndex = 50;
+            RefreshBTN.Text = "REFRESH";
+            RefreshBTN.UseVisualStyleBackColor = true;
+            RefreshBTN.Click += RefreshBTN_Click;
             // 
             // DeliveryTableView
             // 
@@ -342,14 +327,14 @@
             DeliveryTableView.Name = "DeliveryTableView";
             DeliveryTableView.RowHeadersWidth = 51;
             DeliveryTableView.RowTemplate.Height = 29;
-            DeliveryTableView.Size = new Size(1152, 326);
+            DeliveryTableView.Size = new Size(1424, 326);
             DeliveryTableView.TabIndex = 57;
             DeliveryTableView.CellClick += DeliveryTableView_CellClick;
             // 
             // TxtAddress
             // 
             TxtAddress.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtAddress.Location = new Point(46, 536);
+            TxtAddress.Location = new Point(197, 573);
             TxtAddress.Multiline = true;
             TxtAddress.Name = "TxtAddress";
             TxtAddress.Size = new Size(271, 31);
@@ -358,7 +343,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(46, 518);
+            label14.Location = new Point(197, 555);
             label14.Name = "label14";
             label14.Size = new Size(49, 15);
             label14.TabIndex = 49;
@@ -367,7 +352,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(560, 633);
+            radioButton1.Location = new Point(307, 410);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(94, 19);
             radioButton1.TabIndex = 58;
@@ -378,7 +363,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(685, 633);
+            radioButton2.Location = new Point(197, 410);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(94, 19);
             radioButton2.TabIndex = 58;
@@ -388,7 +373,7 @@
             // 
             // HomeBTN
             // 
-            HomeBTN.Location = new Point(952, 646);
+            HomeBTN.Location = new Point(1327, 345);
             HomeBTN.Name = "HomeBTN";
             HomeBTN.Size = new Size(75, 23);
             HomeBTN.TabIndex = 59;
@@ -396,12 +381,60 @@
             HomeBTN.UseVisualStyleBackColor = true;
             HomeBTN.Click += HomeBTN_Click;
             // 
+            // ClientCompComboBox
+            // 
+            ClientCompComboBox.FormattingEnabled = true;
+            ClientCompComboBox.Location = new Point(197, 527);
+            ClientCompComboBox.Name = "ClientCompComboBox";
+            ClientCompComboBox.Size = new Size(204, 23);
+            ClientCompComboBox.TabIndex = 60;
+            ClientCompComboBox.SelectedIndexChanged += ClientCompComboBox_SelectedIndexChanged;
+            // 
+            // DriverComboBox
+            // 
+            DriverComboBox.FormattingEnabled = true;
+            DriverComboBox.Location = new Point(197, 468);
+            DriverComboBox.Name = "DriverComboBox";
+            DriverComboBox.Size = new Size(204, 23);
+            DriverComboBox.TabIndex = 60;
+            // 
+            // DPlistView
+            // 
+            DPlistView.Location = new Point(1118, 399);
+            DPlistView.Name = "DPlistView";
+            DPlistView.Size = new Size(294, 214);
+            DPlistView.TabIndex = 61;
+            DPlistView.UseCompatibleStateImageBehavior = false;
+            // 
+            // AddBTN
+            // 
+            AddBTN.Location = new Point(988, 605);
+            AddBTN.Name = "AddBTN";
+            AddBTN.Size = new Size(75, 23);
+            AddBTN.TabIndex = 52;
+            AddBTN.Text = "ADD";
+            AddBTN.UseVisualStyleBackColor = true;
+            AddBTN.Click += AddBTN_Click;
+            // 
+            // ClearBTN
+            // 
+            ClearBTN.Location = new Point(988, 646);
+            ClearBTN.Name = "ClearBTN";
+            ClearBTN.Size = new Size(75, 23);
+            ClearBTN.TabIndex = 52;
+            ClearBTN.Text = "CLEAR";
+            ClearBTN.UseVisualStyleBackColor = true;
+            ClearBTN.Click += ClearBTN_Click;
+            // 
             // frmDeliveryPickup
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1172, 681);
+            ClientSize = new Size(1441, 681);
+            Controls.Add(DPlistView);
+            Controls.Add(DriverComboBox);
+            Controls.Add(ClientCompComboBox);
             Controls.Add(HomeBTN);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
@@ -410,9 +443,11 @@
             Controls.Add(WeightBox);
             Controls.Add(NameItemBox);
             Controls.Add(SizeBox);
+            Controls.Add(ClearBTN);
+            Controls.Add(AddBTN);
             Controls.Add(DeleteBTN);
             Controls.Add(UpdateBTN);
-            Controls.Add(ReadBTN);
+            Controls.Add(RefreshBTN);
             Controls.Add(CreateBTN);
             Controls.Add(label10);
             Controls.Add(label8);
@@ -435,8 +470,6 @@
             Controls.Add(TxtAddress);
             Controls.Add(TxtContact);
             Controls.Add(TxtPlate);
-            Controls.Add(TxtCompany);
-            Controls.Add(TxtDriver);
             Name = "frmDeliveryPickup";
             Text = " ";
             Load += frmDelivery_Load;
@@ -469,17 +502,20 @@
         private TextBox TxtDriverPhonenumber;
         private TextBox TxtContact;
         private TextBox TxtPlate;
-        private TextBox TxtCompany;
-        private TextBox TxtDriver;
         private Label label12;
         private ComboBox NameItemBox;
         private Label label13;
-        private Button ReadBTN;
+        private Button RefreshBTN;
         private DataGridView DeliveryTableView;
         private TextBox TxtAddress;
         private Label label14;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private Button HomeBTN;
+        private ComboBox ClientCompComboBox;
+        private ComboBox DriverComboBox;
+        private ListView DPlistView;
+        private Button AddBTN;
+        private Button ClearBTN;
     }
 }

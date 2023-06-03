@@ -1,4 +1,5 @@
-USE DB_Receive
+CREATE DATABASE DB_Receive;
+USE DB_Receive;
 
 CREATE TABLE TBL_Receive(
 Receive_From varchar (255) NOT NULL,

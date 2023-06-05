@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dateTimePicker1 = new DateTimePicker();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox1 = new ComboBox();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button5 = new Button();
-            button1 = new Button();
+            DateAndTime = new DateTimePicker();
+            WeightBox = new ComboBox();
+            NameItemBox = new ComboBox();
+            SizeBox = new ComboBox();
+            DeleteBTN = new Button();
+            UpdateBTN = new Button();
+            RefreshBTN = new Button();
+            CreateBTN = new Button();
             label10 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -49,96 +48,93 @@
             label5 = new Label();
             label3 = new Label();
             label1 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            TxtRemarks = new TextBox();
+            TxtQuantity = new TextBox();
+            TxtClientPhone = new TextBox();
+            TxtReceivedfrmPhone = new TextBox();
+            TxtReceiveby = new TextBox();
+            TxtPlate = new TextBox();
             label13 = new Label();
             HomeBTN = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ReceiveTableView = new DataGridView();
+            ReceivefrmComboBox = new ComboBox();
+            NameofClientComboBox = new ComboBox();
+            ClearBtn = new Button();
+            AddBTN = new Button();
+            ((System.ComponentModel.ISupportInitialize)ReceiveTableView).BeginInit();
             SuspendLayout();
             // 
-            // dateTimePicker1
+            // DateAndTime
             // 
-            dateTimePicker1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(58, 538);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(239, 26);
-            dateTimePicker1.TabIndex = 85;
+            DateAndTime.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DateAndTime.Location = new Point(58, 538);
+            DateAndTime.Name = "DateAndTime";
+            DateAndTime.Size = new Size(239, 26);
+            DateAndTime.TabIndex = 85;
             // 
-            // comboBox2
+            // WeightBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(697, 572);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(137, 23);
-            comboBox2.TabIndex = 84;
+            WeightBox.FormattingEnabled = true;
+            WeightBox.Location = new Point(697, 572);
+            WeightBox.Name = "WeightBox";
+            WeightBox.Size = new Size(137, 23);
+            WeightBox.TabIndex = 84;
             // 
-            // comboBox3
+            // NameItemBox
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(697, 427);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(137, 23);
-            comboBox3.TabIndex = 83;
+            NameItemBox.FormattingEnabled = true;
+            NameItemBox.Location = new Point(697, 427);
+            NameItemBox.Name = "NameItemBox";
+            NameItemBox.Size = new Size(137, 23);
+            NameItemBox.TabIndex = 83;
             // 
-            // comboBox1
+            // SizeBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(697, 528);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(137, 23);
-            comboBox1.TabIndex = 82;
+            SizeBox.FormattingEnabled = true;
+            SizeBox.Location = new Point(697, 528);
+            SizeBox.Name = "SizeBox";
+            SizeBox.Size = new Size(137, 23);
+            SizeBox.TabIndex = 82;
             // 
-            // button4
+            // DeleteBTN
             // 
-            button4.Location = new Point(556, 592);
-            button4.Name = "button4";
-            button4.Size = new Size(87, 23);
-            button4.TabIndex = 81;
-            button4.Text = "DELETE ALL";
-            button4.UseVisualStyleBackColor = true;
+            DeleteBTN.Location = new Point(443, 592);
+            DeleteBTN.Name = "DeleteBTN";
+            DeleteBTN.Size = new Size(75, 23);
+            DeleteBTN.TabIndex = 80;
+            DeleteBTN.Text = "DELETE";
+            DeleteBTN.UseVisualStyleBackColor = true;
+            DeleteBTN.Click += DeleteBTN_Click;
             // 
-            // button3
+            // UpdateBTN
             // 
-            button3.Location = new Point(443, 592);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 80;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            UpdateBTN.Location = new Point(321, 592);
+            UpdateBTN.Name = "UpdateBTN";
+            UpdateBTN.Size = new Size(84, 23);
+            UpdateBTN.TabIndex = 79;
+            UpdateBTN.Text = "UPDATE";
+            UpdateBTN.UseVisualStyleBackColor = true;
+            UpdateBTN.Click += UpdateBTN_Click;
             // 
-            // button2
+            // RefreshBTN
             // 
-            button2.Location = new Point(321, 592);
-            button2.Name = "button2";
-            button2.Size = new Size(84, 23);
-            button2.TabIndex = 79;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = true;
+            RefreshBTN.Location = new Point(206, 592);
+            RefreshBTN.Name = "RefreshBTN";
+            RefreshBTN.Size = new Size(75, 23);
+            RefreshBTN.TabIndex = 78;
+            RefreshBTN.Text = "REFRESH";
+            RefreshBTN.UseVisualStyleBackColor = true;
+            RefreshBTN.Click += RefreshBTN_Click;
             // 
-            // button5
+            // CreateBTN
             // 
-            button5.Location = new Point(206, 592);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 78;
-            button5.Text = "READ";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(95, 592);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 77;
-            button1.Text = "CREATE";
-            button1.UseVisualStyleBackColor = true;
+            CreateBTN.Location = new Point(95, 592);
+            CreateBTN.Name = "CreateBTN";
+            CreateBTN.Size = new Size(75, 23);
+            CreateBTN.TabIndex = 77;
+            CreateBTN.Text = "CREATE";
+            CreateBTN.UseVisualStyleBackColor = true;
+            CreateBTN.Click += CreateBTN_Click;
             // 
             // label10
             // 
@@ -248,69 +244,54 @@
             label1.TabIndex = 65;
             label1.Text = "Received from";
             // 
-            // textBox6
+            // TxtRemarks
             // 
-            textBox6.Location = new Point(871, 413);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(264, 202);
-            textBox6.TabIndex = 63;
+            TxtRemarks.Location = new Point(871, 413);
+            TxtRemarks.Multiline = true;
+            TxtRemarks.Name = "TxtRemarks";
+            TxtRemarks.Size = new Size(264, 202);
+            TxtRemarks.TabIndex = 63;
             // 
-            // textBox7
+            // TxtQuantity
             // 
-            textBox7.Location = new Point(697, 474);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(137, 31);
-            textBox7.TabIndex = 62;
+            TxtQuantity.Location = new Point(697, 474);
+            TxtQuantity.Multiline = true;
+            TxtQuantity.Name = "TxtQuantity";
+            TxtQuantity.Size = new Size(137, 31);
+            TxtQuantity.TabIndex = 62;
             // 
-            // textBox8
+            // TxtClientPhone
             // 
-            textBox8.Location = new Point(508, 474);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(158, 31);
-            textBox8.TabIndex = 61;
+            TxtClientPhone.Location = new Point(499, 474);
+            TxtClientPhone.Multiline = true;
+            TxtClientPhone.Name = "TxtClientPhone";
+            TxtClientPhone.Size = new Size(158, 31);
+            TxtClientPhone.TabIndex = 61;
             // 
-            // textBox5
+            // TxtReceivedfrmPhone
             // 
-            textBox5.Location = new Point(432, 420);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(158, 31);
-            textBox5.TabIndex = 60;
+            TxtReceivedfrmPhone.Location = new Point(432, 420);
+            TxtReceivedfrmPhone.Multiline = true;
+            TxtReceivedfrmPhone.Name = "TxtReceivedfrmPhone";
+            TxtReceivedfrmPhone.Size = new Size(158, 31);
+            TxtReceivedfrmPhone.TabIndex = 60;
             // 
-            // textBox4
+            // TxtReceiveby
             // 
-            textBox4.Location = new Point(58, 474);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(204, 31);
-            textBox4.TabIndex = 59;
+            TxtReceiveby.Location = new Point(58, 474);
+            TxtReceiveby.Multiline = true;
+            TxtReceiveby.Name = "TxtReceiveby";
+            TxtReceiveby.Size = new Size(204, 31);
+            TxtReceiveby.TabIndex = 59;
+            TxtReceiveby.Text = "AMJJ LOGISTICS";
             // 
-            // textBox3
+            // TxtPlate
             // 
-            textBox3.Location = new Point(268, 420);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(158, 31);
-            textBox3.TabIndex = 58;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(270, 474);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(234, 31);
-            textBox2.TabIndex = 57;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(58, 420);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(204, 31);
-            textBox1.TabIndex = 64;
+            TxtPlate.Location = new Point(268, 420);
+            TxtPlate.Multiline = true;
+            TxtPlate.Name = "TxtPlate";
+            TxtPlate.Size = new Size(158, 31);
+            TxtPlate.TabIndex = 58;
             // 
             // label13
             // 
@@ -332,34 +313,77 @@
             HomeBTN.UseVisualStyleBackColor = true;
             HomeBTN.Click += HomeBTN_Click;
             // 
-            // dataGridView1
+            // ReceiveTableView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1183, 334);
-            dataGridView1.TabIndex = 90;
+            ReceiveTableView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ReceiveTableView.Location = new Point(3, 3);
+            ReceiveTableView.Margin = new Padding(3, 2, 3, 2);
+            ReceiveTableView.Name = "ReceiveTableView";
+            ReceiveTableView.RowHeadersWidth = 51;
+            ReceiveTableView.RowTemplate.Height = 29;
+            ReceiveTableView.Size = new Size(1183, 334);
+            ReceiveTableView.TabIndex = 90;
+            ReceiveTableView.CellContentClick += ReceiveTableView_CellContentClick;
+            // 
+            // ReceivefrmComboBox
+            // 
+            ReceivefrmComboBox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ReceivefrmComboBox.FormattingEnabled = true;
+            ReceivefrmComboBox.Location = new Point(58, 420);
+            ReceivefrmComboBox.Name = "ReceivefrmComboBox";
+            ReceivefrmComboBox.Size = new Size(204, 28);
+            ReceivefrmComboBox.TabIndex = 91;
+            // 
+            // NameofClientComboBox
+            // 
+            NameofClientComboBox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            NameofClientComboBox.FormattingEnabled = true;
+            NameofClientComboBox.Location = new Point(270, 477);
+            NameofClientComboBox.Name = "NameofClientComboBox";
+            NameofClientComboBox.Size = new Size(223, 28);
+            NameofClientComboBox.TabIndex = 92;
+            NameofClientComboBox.SelectedIndexChanged += NameofClientComboBox_SelectedIndexChanged;
+            // 
+            // ClearBtn
+            // 
+            ClearBtn.Location = new Point(697, 637);
+            ClearBtn.Name = "ClearBtn";
+            ClearBtn.Size = new Size(75, 23);
+            ClearBtn.TabIndex = 93;
+            ClearBtn.Text = "CLEAR";
+            ClearBtn.UseVisualStyleBackColor = true;
+            ClearBtn.Click += ClearBtn_Click;
+            // 
+            // AddBTN
+            // 
+            AddBTN.Location = new Point(697, 608);
+            AddBTN.Name = "AddBTN";
+            AddBTN.Size = new Size(75, 23);
+            AddBTN.TabIndex = 94;
+            AddBTN.Text = "ADD";
+            AddBTN.UseVisualStyleBackColor = true;
+            AddBTN.Click += AddBTN_Click;
             // 
             // frmReceive
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1187, 672);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1028, 672);
+            Controls.Add(AddBTN);
+            Controls.Add(ClearBtn);
+            Controls.Add(NameofClientComboBox);
+            Controls.Add(ReceivefrmComboBox);
+            Controls.Add(ReceiveTableView);
             Controls.Add(HomeBTN);
             Controls.Add(label13);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox1);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button5);
-            Controls.Add(button1);
+            Controls.Add(DateAndTime);
+            Controls.Add(WeightBox);
+            Controls.Add(NameItemBox);
+            Controls.Add(SizeBox);
+            Controls.Add(DeleteBTN);
+            Controls.Add(UpdateBTN);
+            Controls.Add(RefreshBTN);
+            Controls.Add(CreateBTN);
             Controls.Add(label10);
             Controls.Add(label8);
             Controls.Add(label9);
@@ -372,31 +396,29 @@
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox7);
-            Controls.Add(textBox8);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtRemarks);
+            Controls.Add(TxtQuantity);
+            Controls.Add(TxtClientPhone);
+            Controls.Add(TxtReceivedfrmPhone);
+            Controls.Add(TxtReceiveby);
+            Controls.Add(TxtPlate);
             Name = "frmReceive";
             Text = "Form5";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmReceive_Load;
+            ((System.ComponentModel.ISupportInitialize)ReceiveTableView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-        private ComboBox comboBox1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button5;
-        private Button button1;
+        private DateTimePicker DateAndTime;
+        private ComboBox WeightBox;
+        private ComboBox NameItemBox;
+        private ComboBox SizeBox;
+        private Button DeleteBTN;
+        private Button UpdateBTN;
+        private Button RefreshBTN;
+        private Button CreateBTN;
         private Label label10;
         private Label label8;
         private Label label9;
@@ -409,18 +431,20 @@
         private Label label5;
         private Label label3;
         private Label label1;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox TxtRemarks;
+        private TextBox TxtQuantity;
+        private TextBox TxtClientPhone;
+        private TextBox TxtReceivedfrmPhone;
+        private TextBox TxtReceiveby;
+        private TextBox TxtPlate;
         private Label label13;
         private Button button8;
         private Button button7;
         private Button HomeBTN;
-        private DataGridView dataGridView1;
+        private DataGridView ReceiveTableView;
+        private ComboBox ReceivefrmComboBox;
+        private ComboBox NameofClientComboBox;
+        private Button ClearBtn;
+        private Button AddBTN;
     }
 }

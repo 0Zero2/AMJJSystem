@@ -56,14 +56,15 @@
             HomeBTN = new Button();
             ReceiveDataGridView = new DataGridView();
             panel1 = new Panel();
+            label15 = new Label();
             panel2 = new Panel();
+            label3 = new Label();
             panel3 = new Panel();
+            label14 = new Label();
+            RfComboBox = new ComboBox();
             NccComboBox = new ComboBox();
             ItemReceivedListView = new ListView();
-            RfComboBox = new ComboBox();
-            label3 = new Label();
-            label14 = new Label();
-            label15 = new Label();
+            AddBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)ReceiveDataGridView).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -108,7 +109,7 @@
             // DeleteBTN
             // 
             DeleteBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DeleteBTN.Location = new Point(586, 633);
+            DeleteBTN.Location = new Point(441, 632);
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(97, 28);
             DeleteBTN.TabIndex = 80;
@@ -118,7 +119,7 @@
             // UpdateBTN
             // 
             UpdateBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            UpdateBTN.Location = new Point(455, 632);
+            UpdateBTN.Location = new Point(310, 631);
             UpdateBTN.Name = "UpdateBTN";
             UpdateBTN.Size = new Size(98, 28);
             UpdateBTN.TabIndex = 79;
@@ -128,7 +129,7 @@
             // RefreshBTN
             // 
             RefreshBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RefreshBTN.Location = new Point(321, 633);
+            RefreshBTN.Location = new Point(176, 632);
             RefreshBTN.Name = "RefreshBTN";
             RefreshBTN.Size = new Size(93, 28);
             RefreshBTN.TabIndex = 78;
@@ -138,7 +139,7 @@
             // CreateBTN
             // 
             CreateBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CreateBTN.Location = new Point(194, 633);
+            CreateBTN.Location = new Point(49, 632);
             CreateBTN.Name = "CreateBTN";
             CreateBTN.Size = new Size(94, 28);
             CreateBTN.TabIndex = 77;
@@ -180,7 +181,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(804, 632);
+            label6.Location = new Point(826, 612);
             label6.Name = "label6";
             label6.Size = new Size(66, 19);
             label6.TabIndex = 72;
@@ -259,10 +260,10 @@
             // TxtRemarks
             // 
             TxtRemarks.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtRemarks.Location = new Point(876, 622);
+            TxtRemarks.Location = new Point(826, 634);
             TxtRemarks.Multiline = true;
             TxtRemarks.Name = "TxtRemarks";
-            TxtRemarks.Size = new Size(300, 29);
+            TxtRemarks.Size = new Size(350, 29);
             TxtRemarks.TabIndex = 63;
             // 
             // TxtQuantity
@@ -341,11 +342,22 @@
             panel1.Controls.Add(label9);
             panel1.Controls.Add(WeightComboBox);
             panel1.Controls.Add(label8);
+            panel1.Controls.Add(AddBTN);
             panel1.Controls.Add(SizeComboBox);
             panel1.Location = new Point(540, 406);
             panel1.Name = "panel1";
-            panel1.Size = new Size(280, 211);
+            panel1.Size = new Size(280, 257);
             panel1.TabIndex = 91;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(67, 12);
+            label15.Name = "label15";
+            label15.Size = new Size(151, 23);
+            label15.TabIndex = 77;
+            label15.Text = "Item Information";
             // 
             // panel2
             // 
@@ -358,6 +370,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(239, 151);
             panel2.TabIndex = 92;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(41, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(170, 23);
+            label3.TabIndex = 77;
+            label3.Text = "Logistics Company";
             // 
             // panel3
             // 
@@ -373,6 +395,25 @@
             panel3.Size = new Size(276, 213);
             panel3.TabIndex = 93;
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(13, 12);
+            label14.Name = "label14";
+            label14.Size = new Size(249, 23);
+            label14.TabIndex = 77;
+            label14.Text = "Client Company Information";
+            // 
+            // RfComboBox
+            // 
+            RfComboBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RfComboBox.FormattingEnabled = true;
+            RfComboBox.Location = new Point(19, 69);
+            RfComboBox.Name = "RfComboBox";
+            RfComboBox.Size = new Size(235, 27);
+            RfComboBox.TabIndex = 94;
+            // 
             // NccComboBox
             // 
             NccComboBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -387,48 +428,19 @@
             ItemReceivedListView.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ItemReceivedListView.Location = new Point(824, 406);
             ItemReceivedListView.Name = "ItemReceivedListView";
-            ItemReceivedListView.Size = new Size(352, 210);
+            ItemReceivedListView.Size = new Size(352, 198);
             ItemReceivedListView.TabIndex = 94;
             ItemReceivedListView.UseCompatibleStateImageBehavior = false;
             // 
-            // RfComboBox
+            // AddBTN
             // 
-            RfComboBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RfComboBox.FormattingEnabled = true;
-            RfComboBox.Location = new Point(19, 69);
-            RfComboBox.Name = "RfComboBox";
-            RfComboBox.Size = new Size(235, 27);
-            RfComboBox.TabIndex = 94;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(41, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(170, 23);
-            label3.TabIndex = 77;
-            label3.Text = "Logistics Company";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(13, 12);
-            label14.Name = "label14";
-            label14.Size = new Size(249, 23);
-            label14.TabIndex = 77;
-            label14.Text = "Client Company Information";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(67, 12);
-            label15.Name = "label15";
-            label15.Size = new Size(151, 23);
-            label15.TabIndex = 77;
-            label15.Text = "Item Information";
+            AddBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AddBTN.Location = new Point(84, 216);
+            AddBTN.Name = "AddBTN";
+            AddBTN.Size = new Size(97, 28);
+            AddBTN.TabIndex = 80;
+            AddBTN.Text = "ADD";
+            AddBTN.UseVisualStyleBackColor = true;
             // 
             // frmReceive
             // 
@@ -502,5 +514,6 @@
         private Label label14;
         private ComboBox RfComboBox;
         private ListView ItemReceivedListView;
+        private Button AddBTN;
     }
 }

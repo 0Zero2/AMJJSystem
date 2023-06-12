@@ -53,7 +53,7 @@
             panel1.Location = new Point(6, 2);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(368, 569);
+            panel1.Size = new Size(368, 478);
             panel1.TabIndex = 0;
             // 
             // Time
@@ -87,10 +87,10 @@
             // 
             // CompanyBTN
             // 
-            CompanyBTN.Location = new Point(462, 219);
+            CompanyBTN.Location = new Point(541, 219);
             CompanyBTN.Margin = new Padding(3, 2, 3, 2);
             CompanyBTN.Name = "CompanyBTN";
-            CompanyBTN.Size = new Size(340, 38);
+            CompanyBTN.Size = new Size(202, 38);
             CompanyBTN.TabIndex = 1;
             CompanyBTN.Text = "Client's Company";
             CompanyBTN.UseVisualStyleBackColor = true;
@@ -98,10 +98,10 @@
             // 
             // ReceiveBTN
             // 
-            ReceiveBTN.Location = new Point(1099, 369);
+            ReceiveBTN.Location = new Point(1097, 426);
             ReceiveBTN.Margin = new Padding(3, 2, 3, 2);
             ReceiveBTN.Name = "ReceiveBTN";
-            ReceiveBTN.Size = new Size(340, 38);
+            ReceiveBTN.Size = new Size(190, 38);
             ReceiveBTN.TabIndex = 1;
             ReceiveBTN.Text = "Receive";
             ReceiveBTN.UseVisualStyleBackColor = true;
@@ -109,10 +109,10 @@
             // 
             // DeliveryPickupBTN
             // 
-            DeliveryPickupBTN.Location = new Point(462, 369);
+            DeliveryPickupBTN.Location = new Point(541, 426);
             DeliveryPickupBTN.Margin = new Padding(3, 2, 3, 2);
             DeliveryPickupBTN.Name = "DeliveryPickupBTN";
-            DeliveryPickupBTN.Size = new Size(340, 38);
+            DeliveryPickupBTN.Size = new Size(202, 38);
             DeliveryPickupBTN.TabIndex = 1;
             DeliveryPickupBTN.Text = "Delivery / Pick-up";
             DeliveryPickupBTN.UseVisualStyleBackColor = true;
@@ -120,10 +120,10 @@
             // 
             // ItemBTN
             // 
-            ItemBTN.Location = new Point(1099, 219);
+            ItemBTN.Location = new Point(1097, 219);
             ItemBTN.Margin = new Padding(3, 2, 3, 2);
             ItemBTN.Name = "ItemBTN";
-            ItemBTN.Size = new Size(340, 38);
+            ItemBTN.Size = new Size(190, 38);
             ItemBTN.TabIndex = 1;
             ItemBTN.Text = "Client's Item";
             ItemBTN.UseVisualStyleBackColor = true;
@@ -136,14 +136,14 @@
             panel2.Location = new Point(379, 2);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1138, 83);
+            panel2.Size = new Size(1061, 83);
             panel2.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(168, 7);
+            label1.Location = new Point(95, 7);
             label1.Name = "label1";
             label1.Size = new Size(836, 73);
             label1.TabIndex = 0;
@@ -157,7 +157,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1519, 619);
+            ClientSize = new Size(1446, 504);
             Controls.Add(panel2);
             Controls.Add(CompanyBTN);
             Controls.Add(panel1);

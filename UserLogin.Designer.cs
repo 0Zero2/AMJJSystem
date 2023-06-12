@@ -42,6 +42,7 @@
             // 
             // TxtUsername
             // 
+            TxtUsername.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             TxtUsername.Location = new Point(50, 285);
             TxtUsername.Multiline = true;
             TxtUsername.Name = "TxtUsername";
@@ -137,10 +138,10 @@
             // 
             // TxtPassword
             // 
-            TxtPassword.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtPassword.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point);
             TxtPassword.Location = new Point(50, 351);
             TxtPassword.Name = "TxtPassword";
-            TxtPassword.Size = new Size(273, 38);
+            TxtPassword.Size = new Size(273, 35);
             TxtPassword.TabIndex = 6;
             TxtPassword.UseSystemPasswordChar = true;
             // 

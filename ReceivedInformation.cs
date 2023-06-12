@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class frmReceive : Form
+    public partial class ReceivedInformation : Form
     {
-        public frmReceive()
+        public ReceivedInformation()
         {
             InitializeComponent();
-        }
-
-        private void HomeBTN_Click(object sender, EventArgs e)
-        {
-            frmUserDashboard Db = new frmUserDashboard();
-            Db.Show();
-            this.Hide();
         }
     }
 }

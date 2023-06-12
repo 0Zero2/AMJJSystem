@@ -33,13 +33,11 @@
             TxtNameOfItem = new TextBox();
             TxtSize = new TextBox();
             TxtWeight = new TextBox();
-            Txt = new TextBox();
             CreateBTN = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label8 = new Label();
             CompProductTableView = new DataGridView();
             RefreshBTN = new Button();
             UpdateBTN = new Button();
@@ -51,18 +49,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(-6, 9);
+            label1.Font = new Font("Times New Roman", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 28);
             label1.Name = "label1";
-            label1.Size = new Size(493, 73);
+            label1.Size = new Size(465, 42);
             label1.TabIndex = 0;
-            label1.Text = "Company Product";
+            label1.Text = "Company Product Information\r\n";
             // 
             // TxtItemID
             // 
             TxtItemID.Location = new Point(50, 120);
             TxtItemID.Name = "TxtItemID";
-            TxtItemID.Size = new Size(120, 23);
+            TxtItemID.Size = new Size(111, 23);
             TxtItemID.TabIndex = 1;
             // 
             // TxtNameOfItem
@@ -76,26 +74,19 @@
             // 
             TxtSize.Location = new Point(50, 217);
             TxtSize.Name = "TxtSize";
-            TxtSize.Size = new Size(247, 23);
+            TxtSize.Size = new Size(122, 23);
             TxtSize.TabIndex = 3;
             // 
             // TxtWeight
             // 
-            TxtWeight.Location = new Point(50, 273);
+            TxtWeight.Location = new Point(178, 217);
             TxtWeight.Name = "TxtWeight";
-            TxtWeight.Size = new Size(247, 23);
+            TxtWeight.Size = new Size(119, 23);
             TxtWeight.TabIndex = 4;
-            // 
-            // Txt
-            // 
-            Txt.Location = new Point(50, 317);
-            Txt.Name = "Txt";
-            Txt.Size = new Size(100, 23);
-            Txt.TabIndex = 8;
             // 
             // CreateBTN
             // 
-            CreateBTN.Location = new Point(45, 384);
+            CreateBTN.Location = new Point(50, 270);
             CreateBTN.Name = "CreateBTN";
             CreateBTN.Size = new Size(75, 23);
             CreateBTN.TabIndex = 9;
@@ -133,34 +124,25 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(45, 255);
+            label5.Location = new Point(178, 199);
             label5.Name = "label5";
             label5.Size = new Size(45, 15);
             label5.TabIndex = 13;
             label5.Text = "Weight";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(50, 299);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 15);
-            label8.TabIndex = 16;
-            label8.Text = "label8";
-            // 
             // CompProductTableView
             // 
             CompProductTableView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CompProductTableView.Location = new Point(493, 6);
+            CompProductTableView.Location = new Point(483, 12);
             CompProductTableView.Name = "CompProductTableView";
             CompProductTableView.RowTemplate.Height = 25;
-            CompProductTableView.Size = new Size(953, 598);
+            CompProductTableView.Size = new Size(746, 488);
             CompProductTableView.TabIndex = 17;
             CompProductTableView.CellClick += CompProductTableView_CellClick;
             // 
             // RefreshBTN
             // 
-            RefreshBTN.Location = new Point(144, 384);
+            RefreshBTN.Location = new Point(483, 506);
             RefreshBTN.Name = "RefreshBTN";
             RefreshBTN.Size = new Size(75, 23);
             RefreshBTN.TabIndex = 18;
@@ -170,7 +152,7 @@
             // 
             // UpdateBTN
             // 
-            UpdateBTN.Location = new Point(239, 384);
+            UpdateBTN.Location = new Point(151, 270);
             UpdateBTN.Name = "UpdateBTN";
             UpdateBTN.Size = new Size(75, 23);
             UpdateBTN.TabIndex = 19;
@@ -180,7 +162,7 @@
             // 
             // DeleteBTN
             // 
-            DeleteBTN.Location = new Point(339, 384);
+            DeleteBTN.Location = new Point(243, 270);
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(75, 23);
             DeleteBTN.TabIndex = 20;
@@ -190,7 +172,7 @@
             // 
             // HomeBTN
             // 
-            HomeBTN.Location = new Point(178, 463);
+            HomeBTN.Location = new Point(1124, 506);
             HomeBTN.Name = "HomeBTN";
             HomeBTN.Size = new Size(105, 31);
             HomeBTN.TabIndex = 90;
@@ -202,19 +184,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1443, 616);
+            ClientSize = new Size(1241, 547);
             Controls.Add(HomeBTN);
             Controls.Add(DeleteBTN);
             Controls.Add(UpdateBTN);
             Controls.Add(RefreshBTN);
             Controls.Add(CompProductTableView);
-            Controls.Add(label8);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(CreateBTN);
-            Controls.Add(Txt);
             Controls.Add(TxtWeight);
             Controls.Add(TxtSize);
             Controls.Add(TxtNameOfItem);
@@ -234,13 +214,11 @@
         private TextBox TxtNameOfItem;
         private TextBox TxtSize;
         private TextBox TxtWeight;
-        private TextBox Txt;
         private Button CreateBTN;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label8;
         private DataGridView CompProductTableView;
         private Button RefreshBTN;
         private Button UpdateBTN;

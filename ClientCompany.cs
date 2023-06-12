@@ -26,7 +26,7 @@ namespace AMJJSystem
 
         private void HomeBTN_Click(object sender, EventArgs e)
         {
-            frmDashboard Db = new frmDashboard();
+            frmUserDashboard Db = new frmUserDashboard();
             Db.Show();
             this.Hide();
         }
@@ -34,8 +34,7 @@ namespace AMJJSystem
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_ClientCompany (Company_ID, Name_of_Company, Company_Number, Contact_Person, Phone_Number, Driver, Contact_Number, Plate_Number) VALUES (@Company_ID, @Name_of_Company, @Company_Number, @Contact_Person, @Phone_Number, @Driver, @Contact_Number, @Plate_Number)", con);
-            cmd.Parameters.AddWithValue("@Company_ID", TxtCompanyID.Text);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_ClientCompany (Name_of_Company, Company_Number, Contact_Person, Phone_Number, Driver, Contact_Number, Plate_Number) VALUES (@Name_of_Company, @Company_Number, @Contact_Person, @Phone_Number, @Driver, @Contact_Number, @Plate_Number)", con);
             cmd.Parameters.AddWithValue("@Name_of_Company", TxtCompanyName.Text);
             cmd.Parameters.AddWithValue("@Company_Number", TxtCompanyNumber.Text);
             cmd.Parameters.AddWithValue("@Contact_Person", TxtContactPerson.Text);
@@ -127,12 +126,11 @@ namespace AMJJSystem
                 TxtDriver.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Driver"].FormattedValue.ToString();
                 TxtContactNumber.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Contact_Number"].FormattedValue.ToString();
                 TxtPlateNumber.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Plate_Number"].FormattedValue.ToString();
-
             }
         }
-            void BindData()
+        void BindData()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_ClientCompany", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);

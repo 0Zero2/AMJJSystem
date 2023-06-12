@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AMJJSystem
 {
-    public partial class frmDashboard : Form
+    public partial class frmUserDashboard : Form
     {
-        public frmDashboard()
+        public frmUserDashboard()
         {
             InitializeComponent();
         }
@@ -26,34 +26,23 @@ namespace AMJJSystem
         {
             timer1.Start();
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Date.Text = DateTime.Now.ToLongDateString();
             Time.Text = DateTime.Now.ToLongTimeString();
         }
-
         private void DeliveryPickupBTN_Click(object sender, EventArgs e)
         {
             frmDeliveryPickup Dr = new frmDeliveryPickup();
             Dr.Show();
             this.Hide();
         }
-
         private void CompanyBTN_Click(object sender, EventArgs e)
         {
             frmClientCompany CC = new frmClientCompany();
             CC.Show();
             this.Hide();
         }
-
-        private void DriverBTN_Click(object sender, EventArgs e)
-        {
-            frmDriver driver = new frmDriver();
-            driver.Show();
-            this.Hide();
-        }
-
         private void ItemBTN_Click(object sender, EventArgs e)
         {
             frmProduct item = new frmProduct();

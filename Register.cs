@@ -17,6 +17,7 @@ namespace AMJJSystem
         {
             InitializeComponent();
         }
+        string Role;
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DBLogin;Integrated Security=True");
 
         private void registerBTN_Click(object sender, EventArgs e)
@@ -29,11 +30,12 @@ namespace AMJJSystem
                     if (v != 1)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Register (First_Name,Last_Name,Username,Password) VALUES (@First_Name,@Last_Name,@Username,@Password)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Register (First_Name,Last_Name,Username,Password,Authority) VALUES (@First_Name,@Last_Name,@Username,@Password,@Authority)", con);
                         cmd.Parameters.AddWithValue("@First_Name", TxtFirstname.Text);
                         cmd.Parameters.AddWithValue("@Last_Name", TxtLastname.Text);
                         cmd.Parameters.AddWithValue("@Username", TxtUsername.Text);
                         cmd.Parameters.AddWithValue("@Password", TxtPassword.Text);
+                        cmd.Parameters.AddWithValue("@Authority", Role);
                         cmd.ExecuteNonQuery();
                         con.Close();
                         MessageBox.Show("Register Succesfully!");
@@ -95,9 +97,24 @@ namespace AMJJSystem
         }
         private void DriverLabel_Click(object sender, EventArgs e)
         {
-            frmAdmin Driver = new frmAdmin();
+            frmDriver Driver = new frmDriver();
             Driver.Show();
             this.Hide();
+        }
+
+        private void ClientRB_CheckedChanged(object sender, EventArgs e)
+        {
+            Role = "Client";
+        }
+
+        private void driverRB_CheckedChanged(object sender, EventArgs e)
+        {
+            Role = "Driver";
+        }
+
+        private void frmRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace AMJJSystem
         {
             if (TxtUsername.Text != "" && TxtPassword.Text != "")
             {
-                string query = "SELECT COUNT(*) FROM TBL_Register WHERE Username='" + TxtUsername.Text + "' AND Password='" + TxtPassword.Text + "'";
+                string query = "SELECT COUNT(*) FROM TBL_Register WHERE Username='" + TxtUsername.Text + "' AND Password='" + TxtPassword.Text + "'" ;
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 int v = (int)cmd.ExecuteScalar();
@@ -27,7 +27,7 @@ namespace AMJJSystem
                 }
                 else
                 {
-                    frmDashboard Db = new frmDashboard();
+                    frmUserDashboard Db = new frmUserDashboard();
                     MessageBox.Show("Welcome to AMJJ SYSTEM!");
                     TxtUsername.Text = "";
                     TxtPassword.Text = "";

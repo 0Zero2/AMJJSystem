@@ -21,7 +21,7 @@ namespace AMJJSystem
         string selectedItemID = "";
         private void HomeBTN_Click(object sender, EventArgs e)
         {
-            frmDashboard Db = new frmDashboard();
+            frmUserDashboard Db = new frmUserDashboard();
             Db.Show();
             this.Hide();
         }
@@ -29,8 +29,7 @@ namespace AMJJSystem
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Products (Item_ID, Name_of_Item, Size, Weight) VALUES (@Item_ID, @Name_of_Item, @Size, @Weight)", con);
-            cmd.Parameters.AddWithValue("@Item_ID", TxtItemID.Text);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Products (Name_of_Item, Size, Weight) VALUES (@Name_of_Item, @Size, @Weight)", con);
             cmd.Parameters.AddWithValue("@Name_of_Item", TxtNameOfItem.Text);
             cmd.Parameters.AddWithValue("@Size", TxtSize.Text);
             cmd.Parameters.AddWithValue("@Weight", TxtWeight.Text);
@@ -53,7 +52,7 @@ namespace AMJJSystem
 
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE TBL_ClientCompany SET Name_of_Item = @Name_of_Item, Size = @Size, Weight = @Weight WHERE Item_ID = @Item_ID";
+            string updateQuery = "UPDATE TBL_Products SET Name_of_Item = @Name_of_Item, Size = @Size, Weight = @Weight WHERE Item_ID = @Item_ID";
             try
             {
                 con.Open();
@@ -78,7 +77,7 @@ namespace AMJJSystem
 
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "DELETE FROM TBL_Item WHERE Item_ID = @Item_ID";
+            string updateQuery = "DELETE FROM TBL_Products WHERE Item_ID = @Item_ID";
             try
             {
                 con.Open();

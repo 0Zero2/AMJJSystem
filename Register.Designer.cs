@@ -43,7 +43,7 @@
             TxtUsername = new TextBox();
             label8 = new Label();
             ClientRB = new RadioButton();
-            AdminRB = new RadioButton();
+            driverRB = new RadioButton();
             DriverLabel = new Label();
             SuspendLayout();
             // 
@@ -139,7 +139,7 @@
             TxtPassword.Location = new Point(56, 417);
             TxtPassword.Name = "TxtPassword";
             TxtPassword.Size = new Size(267, 38);
-            TxtPassword.TabIndex = 6;
+            TxtPassword.TabIndex = 10;
             TxtPassword.UseSystemPasswordChar = true;
             // 
             // TxtLastname
@@ -197,18 +197,20 @@
             ClientRB.TabStop = true;
             ClientRB.Text = "Client";
             ClientRB.UseVisualStyleBackColor = true;
+            ClientRB.CheckedChanged += ClientRB_CheckedChanged;
             // 
-            // AdminRB
+            // driverRB
             // 
-            AdminRB.AutoSize = true;
-            AdminRB.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            AdminRB.Location = new Point(57, 359);
-            AdminRB.Name = "AdminRB";
-            AdminRB.Size = new Size(74, 25);
-            AdminRB.TabIndex = 17;
-            AdminRB.TabStop = true;
-            AdminRB.Text = "Driver";
-            AdminRB.UseVisualStyleBackColor = true;
+            driverRB.AutoSize = true;
+            driverRB.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            driverRB.Location = new Point(57, 359);
+            driverRB.Name = "driverRB";
+            driverRB.Size = new Size(74, 25);
+            driverRB.TabIndex = 17;
+            driverRB.TabStop = true;
+            driverRB.Text = "Driver";
+            driverRB.UseVisualStyleBackColor = true;
+            driverRB.CheckedChanged += driverRB_CheckedChanged;
             // 
             // DriverLabel
             // 
@@ -227,7 +229,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(381, 644);
-            Controls.Add(AdminRB);
+            Controls.Add(driverRB);
             Controls.Add(ClientRB);
             Controls.Add(clearBTN);
             Controls.Add(registerBTN);
@@ -247,6 +249,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmRegister";
             Text = "Register";
+            Load += frmRegister_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,7 +271,7 @@
         private TextBox TxtUsername;
         private Label label8;
         private RadioButton ClientRB;
-        private RadioButton AdminRB;
+        private RadioButton driverRB;
         private Label DriverLabel;
     }
 }

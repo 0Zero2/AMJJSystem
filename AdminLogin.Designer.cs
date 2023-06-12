@@ -1,6 +1,6 @@
 ﻿namespace AMJJSystem
 {
-    partial class frmAdmin
+    partial class frmDriver
     {
         /// <summary>
         /// Required designer variable.
@@ -46,9 +46,9 @@
             label1.Font = new Font("Times New Roman", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(134, 176);
             label1.Name = "label1";
-            label1.Size = new Size(118, 42);
+            label1.Size = new Size(112, 42);
             label1.TabIndex = 0;
-            label1.Text = "Admin";
+            label1.Text = "Driver";
             // 
             // ShowCheckBox
             // 
@@ -71,6 +71,7 @@
             BtnLogin.TabIndex = 4;
             BtnLogin.Text = "Login";
             BtnLogin.UseVisualStyleBackColor = true;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // BtnClear
             // 
@@ -99,7 +100,7 @@
             label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(192, 0, 0);
-            label3.Location = new Point(184, 515);
+            label3.Location = new Point(175, 515);
             label3.Name = "label3";
             label3.Size = new Size(58, 19);
             label3.TabIndex = 7;
@@ -126,11 +127,12 @@
             // 
             // TxtPassword
             // 
+            TxtPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtPassword.Location = new Point(52, 347);
-            TxtPassword.Multiline = true;
             TxtPassword.Name = "TxtPassword";
-            TxtPassword.Size = new Size(273, 33);
+            TxtPassword.Size = new Size(273, 26);
             TxtPassword.TabIndex = 10;
+            TxtPassword.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -142,7 +144,7 @@
             label5.TabIndex = 11;
             label5.Text = "Password";
             // 
-            // frmAdmin
+            // frmDriver
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -157,9 +159,8 @@
             Controls.Add(BtnLogin);
             Controls.Add(ShowCheckBox);
             Controls.Add(label1);
-            Name = "frmAdmin";
-            Text = "Admin";
-            Load += frmAdmin_Load;
+            Name = "frmDriver";
+            Text = "DRIVER";
             ResumeLayout(false);
             PerformLayout();
         }

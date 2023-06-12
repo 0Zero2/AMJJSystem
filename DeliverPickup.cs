@@ -23,6 +23,7 @@ namespace AMJJSystem
             FillComboBox();
         }
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_DeliveryPickup;Integrated Security=True");
+        SqlConnection conA = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_ClientCompany;Integrated Security=True");
         string selectedDeliveryID = "";
         private void CreateBTN_Click(object sender, EventArgs e)
         {
@@ -117,12 +118,12 @@ namespace AMJJSystem
 
         void FillComboBox()
         {
-            string sql = "select * from TBL_ClientCompany";
-            SqlCommand cmd = new SqlCommand(sql, con);
+            string sql = "SELECT * FROM TBL_ClientCompany";
+            SqlCommand cmd = new SqlCommand(sql, conA);
             SqlDataReader myreader;
             try
             {
-                con.Open();
+                conA.Open();
                 myreader = cmd.ExecuteReader();
 
                 while (myreader.Read())
@@ -130,6 +131,7 @@ namespace AMJJSystem
                     string sname = myreader.GetString(1);
                     ClientCompComboBox.Items.Add(sname);
                 }
+                conA.Close();
             }
             catch (Exception ex)
             {
@@ -148,7 +150,6 @@ namespace AMJJSystem
             con.Close();
 
             DPlistView.View = View.Details;
-
             DPlistView.Columns.Add("Item", 150);
             DPlistView.Columns.Add("Quantity", 150);
             DPlistView.Columns.Add("Size", 150);
@@ -179,7 +180,7 @@ namespace AMJJSystem
 
         private void HomeBTN_Click(object sender, EventArgs e)
         {
-            frmDashboard Db = new frmDashboard();
+            frmUserDashboard Db = new frmUserDashboard();
             Db.Show();
             this.Hide();
         }
@@ -235,14 +236,10 @@ namespace AMJJSystem
         private void add(String item, String quantity, String size, String weight)
         {
             string[] row = { item, quantity, size, weight };
-            ListViewItem items = new ListViewItem(row); 
+            ListViewItem items = new ListViewItem(row);
 
             DPlistView.Items.Add(items);
         }
 
-        private void ClearBTN_Click(object sender, EventArgs e)
-        {
-            DPlistView.Items.Clear();
-        }
     }
 }

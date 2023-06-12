@@ -106,10 +106,10 @@
             // 
             // ReceiveBTN
             // 
-            ReceiveBTN.Location = new Point(1093, 368);
+            ReceiveBTN.Location = new Point(1259, 354);
             ReceiveBTN.Margin = new Padding(3, 2, 3, 2);
             ReceiveBTN.Name = "ReceiveBTN";
-            ReceiveBTN.Size = new Size(340, 38);
+            ReceiveBTN.Size = new Size(138, 38);
             ReceiveBTN.TabIndex = 5;
             ReceiveBTN.Text = "Receive Information";
             ReceiveBTN.UseVisualStyleBackColor = true;
@@ -117,10 +117,10 @@
             // 
             // DeliveryPickupBTN
             // 
-            DeliveryPickupBTN.Location = new Point(456, 368);
+            DeliveryPickupBTN.Location = new Point(852, 354);
             DeliveryPickupBTN.Margin = new Padding(3, 2, 3, 2);
             DeliveryPickupBTN.Name = "DeliveryPickupBTN";
-            DeliveryPickupBTN.Size = new Size(340, 38);
+            DeliveryPickupBTN.Size = new Size(183, 38);
             DeliveryPickupBTN.TabIndex = 7;
             DeliveryPickupBTN.Text = "Delivery / Pick-up Information";
             DeliveryPickupBTN.UseVisualStyleBackColor = true;
@@ -132,10 +132,10 @@
             // 
             // DrInfoBTN
             // 
-            DrInfoBTN.Location = new Point(760, 238);
+            DrInfoBTN.Location = new Point(484, 354);
             DrInfoBTN.Margin = new Padding(3, 2, 3, 2);
             DrInfoBTN.Name = "DrInfoBTN";
-            DrInfoBTN.Size = new Size(340, 38);
+            DrInfoBTN.Size = new Size(133, 38);
             DrInfoBTN.TabIndex = 7;
             DrInfoBTN.Text = "Driver Inforamtion";
             DrInfoBTN.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1528, 554);
+            ClientSize = new Size(1511, 554);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(ReceiveBTN);

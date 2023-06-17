@@ -92,13 +92,13 @@
             CompanyBTN.Name = "CompanyBTN";
             CompanyBTN.Size = new Size(202, 38);
             CompanyBTN.TabIndex = 1;
-            CompanyBTN.Text = "Client's Company";
+            CompanyBTN.Text = "Edit Client's Information";
             CompanyBTN.UseVisualStyleBackColor = true;
             CompanyBTN.Click += CompanyBTN_Click;
             // 
             // ReceiveBTN
             // 
-            ReceiveBTN.Location = new Point(1097, 426);
+            ReceiveBTN.Location = new Point(1097, 397);
             ReceiveBTN.Margin = new Padding(3, 2, 3, 2);
             ReceiveBTN.Name = "ReceiveBTN";
             ReceiveBTN.Size = new Size(190, 38);
@@ -109,7 +109,7 @@
             // 
             // DeliveryPickupBTN
             // 
-            DeliveryPickupBTN.Location = new Point(541, 426);
+            DeliveryPickupBTN.Location = new Point(541, 397);
             DeliveryPickupBTN.Margin = new Padding(3, 2, 3, 2);
             DeliveryPickupBTN.Name = "DeliveryPickupBTN";
             DeliveryPickupBTN.Size = new Size(202, 38);
@@ -125,7 +125,7 @@
             ItemBTN.Name = "ItemBTN";
             ItemBTN.Size = new Size(190, 38);
             ItemBTN.TabIndex = 1;
-            ItemBTN.Text = "Client's Item";
+            ItemBTN.Text = "Client's Product ";
             ItemBTN.UseVisualStyleBackColor = true;
             ItemBTN.Click += ItemBTN_Click;
             // 

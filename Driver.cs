@@ -17,7 +17,7 @@ namespace AMJJSystem
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_ClientCompany;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_RPDC;Integrated Security=True");
         private void Driver_Load(object sender, EventArgs e)
         {
             con.Open();

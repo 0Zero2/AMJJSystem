@@ -137,7 +137,7 @@
             DrInfoBTN.Name = "DrInfoBTN";
             DrInfoBTN.Size = new Size(133, 38);
             DrInfoBTN.TabIndex = 7;
-            DrInfoBTN.Text = "Driver Inforamtion";
+            DrInfoBTN.Text = "Driver Information";
             DrInfoBTN.UseVisualStyleBackColor = true;
             DrInfoBTN.Click += DrInfoBTN_Click;
             // 

@@ -18,10 +18,10 @@ namespace AMJJSystem
             InitializeComponent();
         }
         DataTable dt = new DataTable();
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_DeliveryPickup;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_RPDC;Integrated Security=True");
         private void DrPickupInformation_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_DeliveryPickup", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dt);
             DriverInfoTableView.DataSource = dt;

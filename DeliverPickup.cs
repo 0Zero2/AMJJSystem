@@ -20,15 +20,16 @@ namespace AMJJSystem
         public frmDeliveryPickup()
         {
             InitializeComponent();
-            FillComboBox();
+            fillCombox();
+            fillComboProduct();
+
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_DeliveryPickup;Integrated Security=True");
-        SqlConnection conA = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_ClientCompany;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_RPDC;Integrated Security=True");
         string selectedDeliveryID = "";
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Delivery (Name_of_Driver,Plate_Number,Address,Phone_Number_of_Driver,Name_of_Client_Company,Name_of_Client,Phone_Number_of_Client,Date_and_Time,Name_of_Item,Quantity,Size,Weight,Remarks) VALUES (@Name_of_Driver,@Plate_Number,@Address,@Phone_Number_of_Driver,@Name_of_Client_Company,@Name_of_Client,@Phone_Number_of_Client,@Date_and_Time,@Name_of_Item,@Quantity,@Size,@Weight,@Remarks)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_DeliveryPickup (Name_of_Driver,Plate_Number,Address,Phone_Number_of_Driver,Name_of_Client_Company,Name_of_Client,Phone_Number_of_Client,Date_and_Time,Name_of_Item,Quantity,Size,Weight,Remarks,Status) VALUES (@Name_of_Driver,@Plate_Number,@Address,@Phone_Number_of_Driver,@Name_of_Client_Company,@Name_of_Client,@Phone_Number_of_Client,@Date_and_Time,@Name_of_Item,@Quantity,@Size,@Weight,@Remarks,@Status)", con);
             cmd.Parameters.AddWithValue("@Name_of_Driver", DriverComboBox.Text);
             cmd.Parameters.AddWithValue("@Plate_Number", TxtPlate.Text);
             cmd.Parameters.AddWithValue("@Address", TxtAddress.Text);
@@ -42,6 +43,7 @@ namespace AMJJSystem
             cmd.Parameters.AddWithValue("@Size", SizeBox.Text);
             cmd.Parameters.AddWithValue("@Weight", WeightBox.Text);
             cmd.Parameters.AddWithValue("@Remarks", TxtRemarks.Text);
+            //cmd.Parameters.AddWithValue("@Status", );
             cmd.ExecuteNonQuery();
             con.Close();
             BindData();
@@ -49,7 +51,7 @@ namespace AMJJSystem
         }
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE TBL_Delivery SET Name_of_Driver = @Name_of_Driver, Plate_Number = @Plate_Number, Address = @Address, Phone_Number_of_Driver = @Phone_Number_of_Driver, Name_of_Client_Company = @Name_of_Client_Company, Name_of_Client = @Name_of_Client, Phone_Number_of_Client = @Phone_Number_of_Client, Date_and_Time = @Date_and_Time, Name_of_Item = @Name_of_Item, Quantity = @Quantity, Size = @Size, Weight = @Weight, Remarks = @Remarks WHERE Delivery_ID = @Delivery_ID";
+            string updateQuery = "UPDATE TBL_DeliveryPickup SET Name_of_Driver = @Name_of_Driver, Plate_Number = @Plate_Number, Address = @Address, Phone_Number_of_Driver = @Phone_Number_of_Driver, Name_of_Client_Company = @Name_of_Client_Company, Name_of_Client = @Name_of_Client, Phone_Number_of_Client = @Phone_Number_of_Client, Date_and_Time = @Date_and_Time, Name_of_Item = @Name_of_Item, Quantity = @Quantity, Size = @Size, Weight = @Weight, Remarks = @Remarks WHERE Delivery_ID = @Delivery_ID";
             try
             {
                 con.Open();
@@ -87,7 +89,7 @@ namespace AMJJSystem
 
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "DELETE FROM TBL_Delivery WHERE Delivery_ID = @Delivery_ID";
+            string updateQuery = "DELETE FROM TBL_DeliveryPickup WHERE Delivery_ID = @Delivery_ID";
             try
             {
                 con.Open();
@@ -109,29 +111,51 @@ namespace AMJJSystem
         }
         void BindData()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_DeliveryPickup", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DeliveryTableView.DataSource = dt;
         }
-
-        void FillComboBox()
+        public void fillCombox()
         {
             string sql = "SELECT * FROM TBL_ClientCompany";
-            SqlCommand cmd = new SqlCommand(sql, conA);
+            SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader myreader;
             try
             {
-                conA.Open();
+                con.Open();
                 myreader = cmd.ExecuteReader();
 
                 while (myreader.Read())
                 {
-                    string sname = myreader.GetString(1);
-                    ClientCompComboBox.Items.Add(sname);
+                    string nameofcompany = myreader.GetString(1);
+                    ClientCompComboBox.Items.Add(nameofcompany);
                 }
-                conA.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void fillComboProduct()
+        {
+            string sql = "SELECT * FROM TBL_Products";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader myreader;
+            try
+            {
+                con.Open();
+                myreader = cmd.ExecuteReader();
+
+                while (myreader.Read())
+                {
+                    string nameofProduct = myreader.GetString(1);
+                    NameItemBox.Items.Add(nameofProduct);
+                }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -141,8 +165,9 @@ namespace AMJJSystem
 
         private void frmDelivery_Load(object sender, EventArgs e)
         {
+            
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_DeliveryPickup", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -188,7 +213,7 @@ namespace AMJJSystem
         private void RefreshBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_Delivery", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_DeliveryPickup", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -198,9 +223,11 @@ namespace AMJJSystem
 
         private void ClientCompComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sql = "select * from TBL_ClientCompany where Name_of_Company = '" + ClientCompComboBox + "';";
+            string value = ClientCompComboBox.GetItemText(ClientCompComboBox.SelectedItem);
+            string sql = "SELECT * FROM TBL_ClientCompany WHERE Name_of_Company = '" + value + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader myreader;
+            DriverComboBox.Items.Clear();
             try
             {
                 con.Open();
@@ -208,24 +235,25 @@ namespace AMJJSystem
 
                 while (myreader.Read())
                 {
-                    string drivername = myreader.GetString(0);
-                    string phonenumber = myreader.GetInt32(1).ToString();
-                    string platenumber = myreader.GetString(2);
-                    string contactperson = myreader.GetString(3);
-                    string contactnumber = myreader.GetInt32(4).ToString();
-                    DriverComboBox.Text = drivername;
-                    TxtDriverPhonenumber.Text = phonenumber;
-                    TxtPlate.Text = platenumber;
-                    TxtContact.Text = contactperson;
-                    TxtCompanynumber.Text = contactnumber;
+                    string CompNum = myreader.GetInt32(2).ToString();
+                    string ContPer = myreader.GetString(3);
+                    string PhNum = myreader.GetInt32(4).ToString();
+                    string Driver = myreader.GetString(5);
+                    string DcontNum = myreader.GetInt32(6).ToString();
+                    string PlNum = myreader.GetString(7);
+                    TxtContact.Text = ContPer;
+                    TxtCompanynumber.Text = CompNum;
+                    TxtDriverPhonenumber.Text = DcontNum;
+                    TxtPlate.Text = PlNum;
+                    DriverComboBox.Items.Add(Driver);
+                    DriverComboBox.SelectedIndex = 0;
                 }
+                con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
 
         private void AddBTN_Click(object sender, EventArgs e)
@@ -241,5 +269,34 @@ namespace AMJJSystem
             DPlistView.Items.Add(items);
         }
 
+        private void NameItemBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string value = NameItemBox.GetItemText(NameItemBox.SelectedItem);
+            string sql = "SELECT * FROM TBL_Products WHERE Item_Name = '" + value + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader myreader;
+            SizeBox.Items.Clear();
+            WeightBox.Items.Clear();
+            try
+            {
+                con.Open();
+                myreader = cmd.ExecuteReader();
+
+                while (myreader.Read())
+                {
+                    string Volume = myreader.GetString(2);
+                    string Weight = myreader.GetString(3);
+                    SizeBox.Items.Add(Volume);
+                    SizeBox.SelectedIndex = 0;
+                    WeightBox.Items.Add(Weight);
+                    WeightBox.SelectedIndex = 0;
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

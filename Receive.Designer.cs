@@ -57,6 +57,7 @@
             ReceiveDataGridView = new DataGridView();
             panel1 = new Panel();
             label15 = new Label();
+            AddBTN = new Button();
             panel2 = new Panel();
             label3 = new Label();
             panel3 = new Panel();
@@ -64,7 +65,6 @@
             RfComboBox = new ComboBox();
             NccComboBox = new ComboBox();
             ItemReceivedListView = new ListView();
-            AddBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)ReceiveDataGridView).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -109,32 +109,35 @@
             // DeleteBTN
             // 
             DeleteBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DeleteBTN.Location = new Point(441, 632);
+            DeleteBTN.Location = new Point(425, 631);
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(97, 28);
             DeleteBTN.TabIndex = 80;
             DeleteBTN.Text = "DELETE";
             DeleteBTN.UseVisualStyleBackColor = true;
+            DeleteBTN.Click += DeleteBTN_Click;
             // 
             // UpdateBTN
             // 
             UpdateBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            UpdateBTN.Location = new Point(310, 631);
+            UpdateBTN.Location = new Point(298, 632);
             UpdateBTN.Name = "UpdateBTN";
             UpdateBTN.Size = new Size(98, 28);
             UpdateBTN.TabIndex = 79;
             UpdateBTN.Text = "UPDATE";
             UpdateBTN.UseVisualStyleBackColor = true;
+            UpdateBTN.Click += UpdateBTN_Click;
             // 
             // RefreshBTN
             // 
             RefreshBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RefreshBTN.Location = new Point(176, 632);
+            RefreshBTN.Location = new Point(173, 631);
             RefreshBTN.Name = "RefreshBTN";
             RefreshBTN.Size = new Size(93, 28);
             RefreshBTN.TabIndex = 78;
             RefreshBTN.Text = "REFRESH";
             RefreshBTN.UseVisualStyleBackColor = true;
+            RefreshBTN.Click += RefreshBTN_Click;
             // 
             // CreateBTN
             // 
@@ -145,6 +148,7 @@
             CreateBTN.TabIndex = 77;
             CreateBTN.Text = "CREATE";
             CreateBTN.UseVisualStyleBackColor = true;
+            CreateBTN.Click += CreateBTN_Click;
             // 
             // label10
             // 
@@ -161,21 +165,21 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(12, 149);
+            label8.Location = new Point(140, 149);
             label8.Name = "label8";
-            label8.Size = new Size(34, 19);
+            label8.Size = new Size(51, 19);
             label8.TabIndex = 74;
-            label8.Text = "Size";
+            label8.Text = "Weight";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(140, 149);
+            label9.Location = new Point(12, 146);
             label9.Name = "label9";
-            label9.Size = new Size(51, 19);
+            label9.Size = new Size(54, 19);
             label9.TabIndex = 73;
-            label9.Text = "Weight";
+            label9.Text = "Volume";
             // 
             // label6
             // 
@@ -203,9 +207,9 @@
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(19, 100);
             label2.Name = "label2";
-            label2.Size = new Size(164, 19);
+            label2.Size = new Size(101, 19);
             label2.TabIndex = 71;
-            label2.Text = "Name of Client Company";
+            label2.Text = "Name of Client";
             // 
             // label12
             // 
@@ -313,7 +317,8 @@
             // 
             // HomeBTN
             // 
-            HomeBTN.Location = new Point(47, 342);
+            HomeBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            HomeBTN.Location = new Point(49, 342);
             HomeBTN.Name = "HomeBTN";
             HomeBTN.Size = new Size(70, 50);
             HomeBTN.TabIndex = 89;
@@ -359,6 +364,17 @@
             label15.TabIndex = 77;
             label15.Text = "Item Information";
             // 
+            // AddBTN
+            // 
+            AddBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AddBTN.Location = new Point(84, 216);
+            AddBTN.Name = "AddBTN";
+            AddBTN.Size = new Size(97, 28);
+            AddBTN.TabIndex = 80;
+            AddBTN.Text = "ADD";
+            AddBTN.UseVisualStyleBackColor = true;
+            AddBTN.Click += AddBTN_Click;
+            // 
             // panel2
             // 
             panel2.Controls.Add(label3);
@@ -399,11 +415,11 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(13, 12);
+            label14.Location = new Point(54, 12);
             label14.Name = "label14";
-            label14.Size = new Size(249, 23);
+            label14.Size = new Size(177, 23);
             label14.TabIndex = 77;
-            label14.Text = "Client Company Information";
+            label14.Text = "Client's Information";
             // 
             // RfComboBox
             // 
@@ -432,16 +448,6 @@
             ItemReceivedListView.TabIndex = 94;
             ItemReceivedListView.UseCompatibleStateImageBehavior = false;
             // 
-            // AddBTN
-            // 
-            AddBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            AddBTN.Location = new Point(84, 216);
-            AddBTN.Name = "AddBTN";
-            AddBTN.Size = new Size(97, 28);
-            AddBTN.TabIndex = 80;
-            AddBTN.Text = "ADD";
-            AddBTN.UseVisualStyleBackColor = true;
-            // 
             // frmReceive
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -464,6 +470,7 @@
             Controls.Add(TxtRemarks);
             Name = "frmReceive";
             Text = "Form5";
+            Load += frmReceive_Load;
             ((System.ComponentModel.ISupportInitialize)ReceiveDataGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

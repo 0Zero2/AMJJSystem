@@ -17,7 +17,7 @@ namespace AMJJSystem
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_Products;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_RPDC;Integrated Security=True");
         string selectedItemID = "";
         private void HomeBTN_Click(object sender, EventArgs e)
         {
@@ -29,8 +29,9 @@ namespace AMJJSystem
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Products (Name_of_Item, Size, Weight) VALUES (@Name_of_Item, @Size, @Weight)", con);
-            cmd.Parameters.AddWithValue("@Name_of_Item", TxtNameOfItem.Text);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Products (Item_ID, Item_Name, Size, Weight) VALUES (@Item_ID, @Item_Name, @Size, @Weight)", con);
+            cmd.Parameters.AddWithValue("@Item_ID", TxtItemID.Text);
+            cmd.Parameters.AddWithValue("@Item_Name", TxtNameOfItem.Text);
             cmd.Parameters.AddWithValue("@Size", TxtSize.Text);
             cmd.Parameters.AddWithValue("@Weight", TxtWeight.Text);
             cmd.ExecuteNonQuery();
@@ -52,7 +53,7 @@ namespace AMJJSystem
 
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE TBL_Products SET Name_of_Item = @Name_of_Item, Size = @Size, Weight = @Weight WHERE Item_ID = @Item_ID";
+            string updateQuery = "UPDATE TBL_Products SET Item_Name = @Item_Name, Size = @Size, Weight = @Weight WHERE Item_ID = @Item_ID";
             try
             {
                 con.Open();
@@ -60,7 +61,7 @@ namespace AMJJSystem
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
                     cmd.Parameters.AddWithValue("@Item_ID", selectedItemID);
-                    cmd.Parameters.AddWithValue("@Name_of_Item", TxtNameOfItem.Text);
+                    cmd.Parameters.AddWithValue("@Item_Name", TxtNameOfItem.Text);
                     cmd.Parameters.AddWithValue("@Size", TxtSize.Text);
                     cmd.Parameters.AddWithValue("@Weight", TxtWeight.Text);
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -103,8 +104,8 @@ namespace AMJJSystem
             if (CompProductTableView.SelectedCells.Count > 0)
             {
                 CompProductTableView.CurrentRow.Selected = true;
-                selectedItemID = CompProductTableView.Rows[e.RowIndex].Cells["Item_ID"].FormattedValue.ToString();
-                TxtNameOfItem.Text = CompProductTableView.Rows[e.RowIndex].Cells["Name_of_Item"].FormattedValue.ToString();
+                selectedItemID = TxtItemID.Text = CompProductTableView.Rows[e.RowIndex].Cells["Item_ID"].FormattedValue.ToString();
+                TxtNameOfItem.Text = CompProductTableView.Rows[e.RowIndex].Cells["Item_Name"].FormattedValue.ToString();
                 TxtSize.Text = CompProductTableView.Rows[e.RowIndex].Cells["Size"].FormattedValue.ToString();
                 TxtWeight.Text = CompProductTableView.Rows[e.RowIndex].Cells["Weight"].FormattedValue.ToString();
             }

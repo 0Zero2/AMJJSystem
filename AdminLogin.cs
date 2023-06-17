@@ -50,7 +50,7 @@ namespace AMJJSystem
             if (TxtUsername.Text != "" && TxtPassword.Text != "")
             {
 
-                string query = "SELECT COUNT(*) FROM TBL_Register WHERE Username='" + TxtUsername.Text + "' AND Password='" + TxtPassword.Text + "'";
+                string query = "SELECT COUNT(*) FROM TBL_Register WHERE Username='" + TxtUsername.Text + "' AND Password='" + TxtPassword.Text + "' AND Authority = 'Driver'";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 int v = (int)cmd.ExecuteScalar();

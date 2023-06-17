@@ -17,7 +17,7 @@ namespace AMJJSystem
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_ClientCompany;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_RPDC;Integrated Security=True");
         string selectedCompanyID = "";
         private void ClientCompany_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,8 @@ namespace AMJJSystem
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_ClientCompany (Name_of_Company, Company_Number, Contact_Person, Phone_Number, Driver, Contact_Number, Plate_Number) VALUES (@Name_of_Company, @Company_Number, @Contact_Person, @Phone_Number, @Driver, @Contact_Number, @Plate_Number)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_ClientCompany (Company_ID, Name_of_Company, Company_Number, Contact_Person, Phone_Number, Driver, Contact_Number, Plate_Number) VALUES (@Company_ID, @Name_of_Company, @Company_Number, @Contact_Person, @Phone_Number, @Driver, @Contact_Number, @Plate_Number)", con);
+            cmd.Parameters.AddWithValue("@Company_ID", TxtCompanyID.Text);
             cmd.Parameters.AddWithValue("@Name_of_Company", TxtCompanyName.Text);
             cmd.Parameters.AddWithValue("@Company_Number", TxtCompanyNumber.Text);
             cmd.Parameters.AddWithValue("@Contact_Person", TxtContactPerson.Text);
@@ -118,7 +119,7 @@ namespace AMJJSystem
             if (ClientCompTableView.SelectedCells.Count > 0)
             {
                 ClientCompTableView.CurrentRow.Selected = true;
-                selectedCompanyID = ClientCompTableView.Rows[e.RowIndex].Cells["Company_ID"].FormattedValue.ToString();
+                selectedCompanyID = TxtCompanyID.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Company_ID"].FormattedValue.ToString();
                 TxtCompanyName.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Name_of_Company"].FormattedValue.ToString();
                 TxtCompanyNumber.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Company_Number"].FormattedValue.ToString();
                 TxtContactPerson.Text = ClientCompTableView.Rows[e.RowIndex].Cells["Contact_Person"].FormattedValue.ToString();

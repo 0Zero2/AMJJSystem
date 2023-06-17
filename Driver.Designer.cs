@@ -40,7 +40,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(277, 471);
+            label1.Location = new Point(306, 470);
             label1.Name = "label1";
             label1.Size = new Size(380, 55);
             label1.TabIndex = 0;
@@ -59,9 +59,9 @@
             // 
             // HomeBTN
             // 
-            HomeBTN.Location = new Point(834, 575);
+            HomeBTN.Location = new Point(235, 470);
             HomeBTN.Name = "HomeBTN";
-            HomeBTN.Size = new Size(105, 31);
+            HomeBTN.Size = new Size(75, 52);
             HomeBTN.TabIndex = 90;
             HomeBTN.Text = "HOME";
             HomeBTN.UseVisualStyleBackColor = true;
@@ -70,18 +70,20 @@
             // TxtSearch
             // 
             TxtSearch.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtSearch.Location = new Point(258, 529);
+            TxtSearch.ForeColor = Color.Gray;
+            TxtSearch.Location = new Point(287, 528);
             TxtSearch.Multiline = true;
             TxtSearch.Name = "TxtSearch";
             TxtSearch.Size = new Size(414, 33);
             TxtSearch.TabIndex = 91;
+            TxtSearch.Text = "Enter-Name-of-Company";
             TxtSearch.TextChanged += TxtSearch_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(147, 529);
+            label2.Location = new Point(176, 528);
             label2.Name = "label2";
             label2.Size = new Size(105, 27);
             label2.TabIndex = 92;

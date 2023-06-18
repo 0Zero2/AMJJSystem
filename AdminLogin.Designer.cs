@@ -161,7 +161,7 @@
             Controls.Add(ShowCheckBox);
             Controls.Add(label1);
             Name = "frmDriver";
-            Text = "DRIVER";
+            Text = "Driver Login";
             ResumeLayout(false);
             PerformLayout();
         }

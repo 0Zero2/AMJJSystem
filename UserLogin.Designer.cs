@@ -164,7 +164,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmLogin";
-            Text = "r";
+            Text = "Client Login";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -49,5 +49,12 @@ namespace AMJJSystem
             item.Show();
             this.Hide();
         }
+
+        private void SignoutBTN_Click(object sender, EventArgs e)
+        {
+            frmRegister register = new frmRegister();
+            register.Show();
+            this.Hide();
+        }
     }
 }

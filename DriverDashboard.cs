@@ -48,5 +48,12 @@ namespace AMJJSystem
             Date.Text = DateTime.Now.ToLongDateString();
             Time.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void SignoutBTN_Click(object sender, EventArgs e)
+        {
+            frmRegister register = new frmRegister();
+            register.Show();
+            this.Hide();
+        }
     }
 }

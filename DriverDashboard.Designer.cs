@@ -39,6 +39,7 @@
             DeliveryPickupBTN = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             DrInfoBTN = new Button();
+            SignoutBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -61,7 +62,7 @@
             panel1.Location = new Point(0, 1);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(368, 537);
+            panel1.Size = new Size(368, 413);
             panel1.TabIndex = 3;
             // 
             // Time
@@ -91,14 +92,14 @@
             panel2.Location = new Point(373, 1);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1138, 83);
+            panel2.Size = new Size(946, 83);
             panel2.TabIndex = 8;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(168, 7);
+            label1.Location = new Point(54, 8);
             label1.Name = "label1";
             label1.Size = new Size(836, 73);
             label1.TabIndex = 0;
@@ -106,10 +107,11 @@
             // 
             // ReceiveBTN
             // 
-            ReceiveBTN.Location = new Point(1259, 354);
+            ReceiveBTN.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ReceiveBTN.Location = new Point(1057, 290);
             ReceiveBTN.Margin = new Padding(3, 2, 3, 2);
             ReceiveBTN.Name = "ReceiveBTN";
-            ReceiveBTN.Size = new Size(138, 38);
+            ReceiveBTN.Size = new Size(226, 38);
             ReceiveBTN.TabIndex = 5;
             ReceiveBTN.Text = "Receive Information";
             ReceiveBTN.UseVisualStyleBackColor = true;
@@ -117,7 +119,8 @@
             // 
             // DeliveryPickupBTN
             // 
-            DeliveryPickupBTN.Location = new Point(852, 354);
+            DeliveryPickupBTN.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            DeliveryPickupBTN.Location = new Point(718, 288);
             DeliveryPickupBTN.Margin = new Padding(3, 2, 3, 2);
             DeliveryPickupBTN.Name = "DeliveryPickupBTN";
             DeliveryPickupBTN.Size = new Size(183, 38);
@@ -132,20 +135,34 @@
             // 
             // DrInfoBTN
             // 
-            DrInfoBTN.Location = new Point(484, 354);
+            DrInfoBTN.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            DrInfoBTN.Location = new Point(394, 288);
             DrInfoBTN.Margin = new Padding(3, 2, 3, 2);
             DrInfoBTN.Name = "DrInfoBTN";
-            DrInfoBTN.Size = new Size(133, 38);
+            DrInfoBTN.Size = new Size(202, 38);
             DrInfoBTN.TabIndex = 7;
             DrInfoBTN.Text = "Driver Information";
             DrInfoBTN.UseVisualStyleBackColor = true;
             DrInfoBTN.Click += DrInfoBTN_Click;
             // 
+            // SignoutBTN
+            // 
+            SignoutBTN.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            SignoutBTN.Location = new Point(1211, 88);
+            SignoutBTN.Margin = new Padding(3, 2, 3, 2);
+            SignoutBTN.Name = "SignoutBTN";
+            SignoutBTN.Size = new Size(108, 38);
+            SignoutBTN.TabIndex = 9;
+            SignoutBTN.Text = "Sign out";
+            SignoutBTN.UseVisualStyleBackColor = true;
+            SignoutBTN.Click += SignoutBTN_Click;
+            // 
             // frmDriverDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1511, 554);
+            ClientSize = new Size(1322, 423);
+            Controls.Add(SignoutBTN);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(ReceiveBTN);
@@ -174,5 +191,6 @@
         private Button DeliveryPickupBTN;
         private System.Windows.Forms.Timer timer1;
         private Button DrInfoBTN;
+        private Button SignoutBTN;
     }
 }

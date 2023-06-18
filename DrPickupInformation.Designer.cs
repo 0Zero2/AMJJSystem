@@ -45,7 +45,7 @@
             TxtSearch.Size = new Size(525, 36);
             TxtSearch.TabIndex = 96;
             TxtSearch.Text = "Enter-Company";
-            TxtSearch.KeyPress += TxtSearch_KeyPress;
+            TxtSearch.TextChanged += TxtSearch_TextChanged;
             // 
             // HomeBTN
             // 
@@ -55,6 +55,7 @@
             HomeBTN.TabIndex = 95;
             HomeBTN.Text = "HOME";
             HomeBTN.UseVisualStyleBackColor = true;
+            HomeBTN.Click += HomeBTN_Click;
             // 
             // DriverInfoTableView
             // 

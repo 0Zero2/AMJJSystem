@@ -22,61 +22,92 @@ namespace AMJJSystem
             InitializeComponent();
             fillCombox();
             fillComboProduct();
-
         }
+
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-G0J1RVI\\SQLEXPRESS;Initial Catalog=DB_RPDC;Integrated Security=True");
+        string Status;
         string selectedDeliveryID = "";
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_DeliveryPickup (Name_of_Driver,Plate_Number,Address,Phone_Number_of_Driver,Name_of_Client_Company,Name_of_Client,Phone_Number_of_Client,Date_and_Time,Name_of_Item,Quantity,Size,Weight,Remarks,Status) VALUES (@Name_of_Driver,@Plate_Number,@Address,@Phone_Number_of_Driver,@Name_of_Client_Company,@Name_of_Client,@Phone_Number_of_Client,@Date_and_Time,@Name_of_Item,@Quantity,@Size,@Weight,@Remarks,@Status)", con);
-            cmd.Parameters.AddWithValue("@Name_of_Driver", DriverComboBox.Text);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_DeliveryPickup (Driver_Name, Plate_Number, Address, Contact_Number_of_Driver, Company_Name,Client_Name, Contact_Number_of_Client, Date_and_Time, Item_Name, Quantity, Size,Weight, Remarks, Status) VALUES (@Driver_Name, @Plate_Number, @Address, @Contact_Number_of_Driver, @Company_Name, @Client_Name, @Contact_Number_of_Client, @Date_and_Time, @Item_Name, @Quantity, @Size, @Weight, @Remarks, @Status)", con);
+            cmd.Parameters.AddWithValue("@Driver_Name", DriverComboBox.Text);
             cmd.Parameters.AddWithValue("@Plate_Number", TxtPlate.Text);
             cmd.Parameters.AddWithValue("@Address", TxtAddress.Text);
-            cmd.Parameters.AddWithValue("@Phone_Number_of_Driver", TxtDriverPhonenumber.Text);
-            cmd.Parameters.AddWithValue("@Name_of_Client_Company", ClientCompComboBox.Text);
-            cmd.Parameters.AddWithValue("@Name_of_Client", TxtContact.Text);
-            cmd.Parameters.AddWithValue("@Phone_Number_of_Client", TxtCompanynumber.Text);
+            cmd.Parameters.AddWithValue("@Contact_Number_of_Driver", TxtDriverPhonenumber.Text);
+            cmd.Parameters.AddWithValue("@Company_Name", ClientCompComboBox.Text);
+            cmd.Parameters.AddWithValue("@Client_Name", TxtContact.Text);
+            cmd.Parameters.AddWithValue("@Contact_Number_of_Client", TxtCompanynumber.Text);
             cmd.Parameters.AddWithValue("@Date_and_Time", DateAndTime.Value);
-            cmd.Parameters.AddWithValue("@Name_of_Item", NameItemBox.Text);
+            cmd.Parameters.AddWithValue("@Item_Name", NameItemBox.Text);
             cmd.Parameters.AddWithValue("@Quantity", TxtQuantity.Text);
             cmd.Parameters.AddWithValue("@Size", SizeBox.Text);
             cmd.Parameters.AddWithValue("@Weight", WeightBox.Text);
             cmd.Parameters.AddWithValue("@Remarks", TxtRemarks.Text);
-            //cmd.Parameters.AddWithValue("@Status", );
+            cmd.Parameters.AddWithValue("@Status", Status);
             cmd.ExecuteNonQuery();
             con.Close();
             BindData();
             MessageBox.Show("Created Successfully");
+
+            DriverComboBox.Text = "";
+            TxtPlate.Text = "";
+            TxtAddress.Text = "";
+            TxtDriverPhonenumber.Text = "";
+            ClientCompComboBox.Text = "";
+            TxtContact.Text = "";
+            TxtCompanynumber.Text = "";
+            NameItemBox.Text = "";
+            TxtQuantity.Text = "";
+            SizeBox.Text = "";
+            WeightBox.Text = "";
+            TxtRemarks.Text = "";
+
         }
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE TBL_DeliveryPickup SET Name_of_Driver = @Name_of_Driver, Plate_Number = @Plate_Number, Address = @Address, Phone_Number_of_Driver = @Phone_Number_of_Driver, Name_of_Client_Company = @Name_of_Client_Company, Name_of_Client = @Name_of_Client, Phone_Number_of_Client = @Phone_Number_of_Client, Date_and_Time = @Date_and_Time, Name_of_Item = @Name_of_Item, Quantity = @Quantity, Size = @Size, Weight = @Weight, Remarks = @Remarks WHERE Delivery_ID = @Delivery_ID";
+            string updateQuery = "UPDATE TBL_DeliveryPickup SET Driver_Name = @Driver_Name, Plate_Number = @Plate_Number, Address = @Address, Contact_Number_of_Driver = @Contact_Number_of_Driver, Company_Name = @Company_Name, Client_Name = @Client_Name, Contact_Number_of_Client = @Contact_Number_of_Client, Date_and_Time = @Date_and_Time, Item_Name = @Item_Name, Quantity = @Quantity, Size = @Size, Weight = @Weight, Remarks = @Remarks, Status = @Status WHERE DrPickup_ID = @DrPickup_ID";
             try
             {
                 con.Open();
 
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@Delivery_ID", selectedDeliveryID);
-                    cmd.Parameters.AddWithValue("@Name_of_Driver", DriverComboBox.Text);
+                    cmd.Parameters.AddWithValue("@DrPickup_ID", selectedDeliveryID);
+                    cmd.Parameters.AddWithValue("@Driver_Name", DriverComboBox.Text);
                     cmd.Parameters.AddWithValue("@Plate_Number", TxtPlate.Text);
                     cmd.Parameters.AddWithValue("@Address", TxtAddress.Text);
-                    cmd.Parameters.AddWithValue("@Phone_Number_of_Driver", TxtDriverPhonenumber.Text);
-                    cmd.Parameters.AddWithValue("@Name_of_Client_Company", ClientCompComboBox.Text);
-                    cmd.Parameters.AddWithValue("@Name_of_Client", TxtContact.Text);
-                    cmd.Parameters.AddWithValue("@Phone_Number_of_Client", TxtCompanynumber.Text);
+                    cmd.Parameters.AddWithValue("@Contact_Number_of_Driver", TxtDriverPhonenumber.Text);
+                    cmd.Parameters.AddWithValue("@Company_Name", ClientCompComboBox.Text);
+                    cmd.Parameters.AddWithValue("@Client_Name", TxtContact.Text);
+                    cmd.Parameters.AddWithValue("@Contact_Number_of_Client", TxtCompanynumber.Text);
                     cmd.Parameters.AddWithValue("@Date_and_Time", DateAndTime.Value);
-                    cmd.Parameters.AddWithValue("@Name_of_Item", NameItemBox.Text);
+                    cmd.Parameters.AddWithValue("@Item_Name", NameItemBox.Text);
                     cmd.Parameters.AddWithValue("@Quantity", TxtQuantity.Text);
                     cmd.Parameters.AddWithValue("@Size", SizeBox.Text);
                     cmd.Parameters.AddWithValue("@Weight", WeightBox.Text);
                     cmd.Parameters.AddWithValue("@Remarks", TxtRemarks.Text);
+                    cmd.Parameters.AddWithValue("@Status", Status);
+                    cmd.ExecuteNonQuery();
                     int rowsAffected = cmd.ExecuteNonQuery();
                     con.Close();
 
                     MessageBox.Show("Updated Successfully");
+                   
+                    DriverComboBox.Text = "";
+                    TxtPlate.Text = "";
+                    TxtAddress.Text = "";
+                    TxtDriverPhonenumber.Text = "";
+                    ClientCompComboBox.Text = "";
+                    TxtContact.Text = "";
+                    TxtCompanynumber.Text = "";
+                    NameItemBox.Text = "";
+                    TxtQuantity.Text = "";
+                    SizeBox.Text = "";
+                    WeightBox.Text = "";
+                    TxtRemarks.Text = "";
                 }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -89,14 +120,14 @@ namespace AMJJSystem
 
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
-            string updateQuery = "DELETE FROM TBL_DeliveryPickup WHERE Delivery_ID = @Delivery_ID";
+            string updateQuery = "DELETE FROM TBL_DeliveryPickup WHERE DrPickup_ID = @DrPickup_ID";
             try
             {
                 con.Open();
 
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@Delivery_ID", selectedDeliveryID);
+                    cmd.Parameters.AddWithValue("@Drpickup_ID", selectedDeliveryID);
                     int rowsAffected = cmd.ExecuteNonQuery();
                     con.Close();
 
@@ -165,7 +196,7 @@ namespace AMJJSystem
 
         private void frmDelivery_Load(object sender, EventArgs e)
         {
-            
+
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM TBL_DeliveryPickup", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -186,20 +217,21 @@ namespace AMJJSystem
             if (DeliveryTableView.SelectedCells.Count > 0)
             {
                 DeliveryTableView.CurrentRow.Selected = true;
-                selectedDeliveryID = DeliveryTableView.Rows[e.RowIndex].Cells["Delivery_ID"].FormattedValue.ToString();
-                DriverComboBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Driver"].FormattedValue.ToString();
+                selectedDeliveryID = DeliveryTableView.Rows[e.RowIndex].Cells["DrPickup_ID"].FormattedValue.ToString();
+                DriverComboBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Driver_Name"].FormattedValue.ToString();
                 TxtPlate.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Plate_Number"].FormattedValue.ToString();
                 TxtAddress.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Address"].FormattedValue.ToString();
-                TxtDriverPhonenumber.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Phone_Number_of_Driver"].FormattedValue.ToString();
-                ClientCompComboBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Client_Company"].FormattedValue.ToString();
-                TxtContact.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Client"].FormattedValue.ToString();
-                TxtCompanynumber.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Phone_Number_of_Client"].FormattedValue.ToString();
+                TxtDriverPhonenumber.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Contact_Number_of_Driver"].FormattedValue.ToString();
+                ClientCompComboBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Company_Name"].FormattedValue.ToString();
+                TxtContact.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Client_Name"].FormattedValue.ToString();
+                TxtCompanynumber.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Contact_Number_of_Client"].FormattedValue.ToString();
                 DateAndTime.Value = DateTime.Parse(DeliveryTableView.Rows[e.RowIndex].Cells["Date_and_Time"].FormattedValue.ToString());
-                NameItemBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Name_of_Item"].FormattedValue.ToString();
+                NameItemBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Item_Name"].FormattedValue.ToString();
                 TxtQuantity.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Quantity"].FormattedValue.ToString();
                 SizeBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Size"].FormattedValue.ToString();
                 WeightBox.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Weight"].FormattedValue.ToString();
                 TxtRemarks.Text = DeliveryTableView.Rows[e.RowIndex].Cells["Remarks"].FormattedValue.ToString();
+                Status = DeliveryTableView.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString();
             }
         }
 
@@ -297,6 +329,16 @@ namespace AMJJSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void DrRadioBTN_CheckedChanged(object sender, EventArgs e)
+        {
+            Status = "Delivery";
+        }
+
+        private void PuRadioBTN_CheckedChanged(object sender, EventArgs e)
+        {
+            Status = "Pick-Up";
         }
     }
 }

@@ -26,13 +26,24 @@ namespace AMJJSystem
             sda.Fill(dt);
             DriverInfoTableView.DataSource = dt;
         }
-        private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                DataView dv = dt.DefaultView;
-                dv.RowFilter = string.Format("Name_of_Client_Company LIKE '%{0}%'");
-            }
+            string query = "SELECT * FROM TBL_DeliveryPickup WHERE Company_Name LIKE '" + TxtSearch.Text + "%'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            DriverInfoTableView.DataSource = dt;
+            con.Close();
+        }
+
+        private void HomeBTN_Click(object sender, EventArgs e)
+        {
+            frmDriverDashboard Db = new frmDriverDashboard();
+            Db.Show();
+            this.Hide();
         }
     }
 }

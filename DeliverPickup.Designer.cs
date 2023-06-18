@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeliveryPickup));
             DateAndTime = new DateTimePicker();
             WeightBox = new ComboBox();
@@ -85,11 +86,11 @@
             // 
             DateAndTime.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DateAndTime.ImeMode = ImeMode.On;
-            DateAndTime.Location = new Point(517, 416);
+            DateAndTime.Location = new Point(510, 430);
             DateAndTime.Name = "DateAndTime";
-            DateAndTime.Size = new Size(258, 26);
+            DateAndTime.Size = new Size(275, 26);
             DateAndTime.TabIndex = 56;
-            DateAndTime.Value = new DateTime(2023, 5, 20, 8, 38, 19, 0);
+            DateAndTime.Value = new DateTime(2023, 6, 17, 23, 20, 44, 0);
             // 
             // WeightBox
             // 
@@ -112,7 +113,7 @@
             // DeleteBTN
             // 
             DeleteBTN.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            DeleteBTN.Location = new Point(589, 616);
+            DeleteBTN.Location = new Point(587, 612);
             DeleteBTN.Name = "DeleteBTN";
             DeleteBTN.Size = new Size(112, 38);
             DeleteBTN.TabIndex = 52;
@@ -123,7 +124,7 @@
             // UpdateBTN
             // 
             UpdateBTN.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            UpdateBTN.Location = new Point(428, 619);
+            UpdateBTN.Location = new Point(428, 612);
             UpdateBTN.Name = "UpdateBTN";
             UpdateBTN.Size = new Size(120, 38);
             UpdateBTN.TabIndex = 51;
@@ -134,7 +135,7 @@
             // CreateBTN
             // 
             CreateBTN.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            CreateBTN.Location = new Point(109, 619);
+            CreateBTN.Location = new Point(109, 612);
             CreateBTN.Name = "CreateBTN";
             CreateBTN.Size = new Size(127, 38);
             CreateBTN.TabIndex = 50;
@@ -146,7 +147,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(570, 374);
+            label10.Location = new Point(570, 395);
             label10.Name = "label10";
             label10.Size = new Size(153, 27);
             label10.TabIndex = 48;
@@ -186,7 +187,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(33, 102);
+            label4.Location = new Point(33, 106);
             label4.Name = "label4";
             label4.Size = new Size(103, 19);
             label4.TabIndex = 49;
@@ -196,7 +197,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(33, 55);
+            label2.Location = new Point(33, 59);
             label2.Name = "label2";
             label2.Size = new Size(125, 19);
             label2.TabIndex = 44;
@@ -216,7 +217,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(33, 147);
+            label11.Location = new Point(33, 151);
             label11.Name = "label11";
             label11.Size = new Size(96, 19);
             label11.TabIndex = 42;
@@ -273,7 +274,7 @@
             // TxtCompanynumber
             // 
             TxtCompanynumber.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtCompanynumber.Location = new Point(33, 170);
+            TxtCompanynumber.Location = new Point(33, 174);
             TxtCompanynumber.Multiline = true;
             TxtCompanynumber.Name = "TxtCompanynumber";
             TxtCompanynumber.Size = new Size(204, 25);
@@ -285,13 +286,13 @@
             TxtDriverPhonenumber.Location = new Point(6, 126);
             TxtDriverPhonenumber.Multiline = true;
             TxtDriverPhonenumber.Name = "TxtDriverPhonenumber";
-            TxtDriverPhonenumber.Size = new Size(166, 25);
+            TxtDriverPhonenumber.Size = new Size(204, 25);
             TxtDriverPhonenumber.TabIndex = 34;
             // 
             // TxtContact
             // 
             TxtContact.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtContact.Location = new Point(33, 121);
+            TxtContact.Location = new Point(33, 125);
             TxtContact.Multiline = true;
             TxtContact.Name = "TxtContact";
             TxtContact.Size = new Size(204, 24);
@@ -303,7 +304,7 @@
             TxtPlate.Location = new Point(6, 172);
             TxtPlate.Multiline = true;
             TxtPlate.Name = "TxtPlate";
-            TxtPlate.Size = new Size(166, 26);
+            TxtPlate.Size = new Size(204, 26);
             TxtPlate.TabIndex = 32;
             // 
             // label12
@@ -339,7 +340,7 @@
             // RefreshBTN
             // 
             RefreshBTN.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            RefreshBTN.Location = new Point(269, 619);
+            RefreshBTN.Location = new Point(269, 612);
             RefreshBTN.Name = "RefreshBTN";
             RefreshBTN.Size = new Size(120, 38);
             RefreshBTN.TabIndex = 50;
@@ -351,12 +352,18 @@
             // 
             DeliveryTableView.AllowUserToAddRows = false;
             DeliveryTableView.AllowUserToDeleteRows = false;
+            DeliveryTableView.AllowUserToResizeRows = false;
+            DeliveryTableView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            DeliveryTableView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             DeliveryTableView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DeliveryTableView.GridColor = SystemColors.ActiveBorder;
             DeliveryTableView.Location = new Point(1, 4);
             DeliveryTableView.Margin = new Padding(3, 1, 3, 1);
             DeliveryTableView.Name = "DeliveryTableView";
-            DeliveryTableView.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DeliveryTableView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             DeliveryTableView.RowTemplate.Height = 29;
+            DeliveryTableView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DeliveryTableView.Size = new Size(1435, 291);
             DeliveryTableView.TabIndex = 57;
             DeliveryTableView.CellClick += DeliveryTableView_CellClick;
@@ -364,7 +371,7 @@
             // TxtAddress
             // 
             TxtAddress.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtAddress.Location = new Point(510, 490);
+            TxtAddress.Location = new Point(507, 501);
             TxtAddress.Multiline = true;
             TxtAddress.Name = "TxtAddress";
             TxtAddress.Size = new Size(278, 26);
@@ -374,7 +381,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(599, 453);
+            label14.Location = new Point(597, 465);
             label14.Name = "label14";
             label14.Size = new Size(90, 27);
             label14.TabIndex = 49;
@@ -384,25 +391,27 @@
             // 
             PuRadioBTN.AutoSize = true;
             PuRadioBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PuRadioBTN.Location = new Point(156, 49);
+            PuRadioBTN.Location = new Point(154, 31);
             PuRadioBTN.Name = "PuRadioBTN";
             PuRadioBTN.Size = new Size(79, 23);
             PuRadioBTN.TabIndex = 58;
             PuRadioBTN.TabStop = true;
             PuRadioBTN.Text = "Pick-Up";
             PuRadioBTN.UseVisualStyleBackColor = true;
+            PuRadioBTN.CheckedChanged += PuRadioBTN_CheckedChanged;
             // 
             // DrRadioBTN
             // 
             DrRadioBTN.AutoSize = true;
             DrRadioBTN.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DrRadioBTN.Location = new Point(39, 49);
+            DrRadioBTN.Location = new Point(44, 31);
             DrRadioBTN.Name = "DrRadioBTN";
             DrRadioBTN.Size = new Size(77, 23);
             DrRadioBTN.TabIndex = 58;
             DrRadioBTN.TabStop = true;
             DrRadioBTN.Text = "Delivery";
             DrRadioBTN.UseVisualStyleBackColor = true;
+            DrRadioBTN.CheckedChanged += DrRadioBTN_CheckedChanged;
             // 
             // HomeBTN
             // 
@@ -420,7 +429,7 @@
             // 
             ClientCompComboBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ClientCompComboBox.FormattingEnabled = true;
-            ClientCompComboBox.Location = new Point(33, 72);
+            ClientCompComboBox.Location = new Point(33, 76);
             ClientCompComboBox.Name = "ClientCompComboBox";
             ClientCompComboBox.Size = new Size(204, 27);
             ClientCompComboBox.TabIndex = 60;
@@ -450,7 +459,7 @@
             // AddBTN
             // 
             AddBTN.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            AddBTN.Location = new Point(92, 200);
+            AddBTN.Location = new Point(94, 201);
             AddBTN.Name = "AddBTN";
             AddBTN.Size = new Size(76, 31);
             AddBTN.TabIndex = 52;
@@ -493,16 +502,16 @@
             panel2.Controls.Add(label4);
             panel2.Location = new Point(12, 377);
             panel2.Name = "panel2";
-            panel2.Size = new Size(261, 209);
+            panel2.Size = new Size(261, 205);
             panel2.TabIndex = 63;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(33, 24);
+            label16.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(44, 22);
             label16.Name = "label16";
-            label16.Size = new Size(175, 21);
+            label16.Size = new Size(193, 23);
             label16.TabIndex = 59;
             label16.Text = "Company Information";
             // 
@@ -511,16 +520,16 @@
             panel3.Controls.Add(label15);
             panel3.Controls.Add(PuRadioBTN);
             panel3.Controls.Add(DrRadioBTN);
-            panel3.Location = new Point(510, 525);
+            panel3.Location = new Point(510, 528);
             panel3.Name = "panel3";
-            panel3.Size = new Size(278, 80);
+            panel3.Size = new Size(278, 62);
             panel3.TabIndex = 64;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(100, 10);
+            label15.Location = new Point(98, 7);
             label15.Name = "label15";
             label15.Size = new Size(70, 27);
             label15.TabIndex = 59;
@@ -577,9 +586,10 @@
             Controls.Add(label13);
             Controls.Add(TxtRemarks);
             Controls.Add(TxtAddress);
-            Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Times New Roman", 10F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmDeliveryPickup";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = " Delivery/Pick-Up Logistics Record System";
             Load += frmDelivery_Load;
             ((System.ComponentModel.ISupportInitialize)DeliveryTableView).EndInit();

@@ -61,6 +61,7 @@
             TxtItemID.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtItemID.Location = new Point(98, 117);
             TxtItemID.Name = "TxtItemID";
+            TxtItemID.ReadOnly = true;
             TxtItemID.Size = new Size(111, 26);
             TxtItemID.TabIndex = 1;
             // 

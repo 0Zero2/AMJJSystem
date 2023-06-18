@@ -111,10 +111,5 @@ namespace AMJJSystem
         {
             Role = "Driver";
         }
-
-        private void frmRegister_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

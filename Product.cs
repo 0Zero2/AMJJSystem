@@ -29,8 +29,7 @@ namespace AMJJSystem
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Products (Item_ID, Item_Name, Size, Weight) VALUES (@Item_ID, @Item_Name, @Size, @Weight)", con);
-            cmd.Parameters.AddWithValue("@Item_ID", TxtItemID.Text);
+            SqlCommand cmd = new SqlCommand("INSERT INTO TBL_Products (Item_Name, Size, Weight) VALUES (@Item_Name, @Size, @Weight)", con);
             cmd.Parameters.AddWithValue("@Item_Name", TxtNameOfItem.Text);
             cmd.Parameters.AddWithValue("@Size", TxtSize.Text);
             cmd.Parameters.AddWithValue("@Weight", TxtWeight.Text);
@@ -85,7 +84,7 @@ namespace AMJJSystem
 
                 using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@Company_ID", selectedItemID);
+                    cmd.Parameters.AddWithValue("@Item_ID", selectedItemID);
                     int rowsAffected = cmd.ExecuteNonQuery();
                     con.Close();
 

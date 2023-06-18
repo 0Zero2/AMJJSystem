@@ -36,7 +36,7 @@ namespace AMJJSystem
         }
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM TBL_Receive WHERE Received_by LIKE '" + TxtSearch.Text + "%'";
+            string query = "SELECT * FROM TBL_Receive WHERE Received_By LIKE '" + TxtSearch.Text + "%'";
             con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

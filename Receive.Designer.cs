@@ -96,6 +96,7 @@
             ItemComboBox.Name = "ItemComboBox";
             ItemComboBox.Size = new Size(251, 27);
             ItemComboBox.TabIndex = 83;
+            ItemComboBox.SelectedIndexChanged += ItemComboBox_SelectedIndexChanged;
             // 
             // SizeComboBox
             // 
@@ -205,11 +206,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(19, 100);
+            label2.Location = new Point(22, 51);
             label2.Name = "label2";
-            label2.Size = new Size(101, 19);
+            label2.Size = new Size(125, 19);
             label2.TabIndex = 71;
-            label2.Text = "Name of Client";
+            label2.Text = "Name of Company";
             // 
             // label12
             // 
@@ -255,7 +256,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(19, 48);
+            label1.Location = new Point(22, 103);
             label1.Name = "label1";
             label1.Size = new Size(97, 19);
             label1.TabIndex = 65;
@@ -291,9 +292,9 @@
             // TxtNccPn
             // 
             TxtNccPn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtNccPn.Location = new Point(19, 170);
+            TxtNccPn.Location = new Point(22, 170);
             TxtNccPn.Name = "TxtNccPn";
-            TxtNccPn.Size = new Size(238, 26);
+            TxtNccPn.Size = new Size(235, 26);
             TxtNccPn.TabIndex = 60;
             // 
             // TxtRby
@@ -328,6 +329,10 @@
             // 
             // ReceiveDataGridView
             // 
+            ReceiveDataGridView.AllowUserToAddRows = false;
+            ReceiveDataGridView.AllowUserToDeleteRows = false;
+            ReceiveDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            ReceiveDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             ReceiveDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ReceiveDataGridView.Location = new Point(3, 3);
             ReceiveDataGridView.Margin = new Padding(3, 2, 3, 2);
@@ -336,6 +341,7 @@
             ReceiveDataGridView.RowTemplate.Height = 29;
             ReceiveDataGridView.Size = new Size(1183, 334);
             ReceiveDataGridView.TabIndex = 90;
+            ReceiveDataGridView.CellClick += ReceiveDataGridView_CellClick;
             // 
             // panel1
             // 
@@ -425,7 +431,7 @@
             // 
             RfComboBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             RfComboBox.FormattingEnabled = true;
-            RfComboBox.Location = new Point(19, 69);
+            RfComboBox.Location = new Point(22, 124);
             RfComboBox.Name = "RfComboBox";
             RfComboBox.Size = new Size(235, 27);
             RfComboBox.TabIndex = 94;
@@ -434,10 +440,11 @@
             // 
             NccComboBox.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             NccComboBox.FormattingEnabled = true;
-            NccComboBox.Location = new Point(19, 122);
+            NccComboBox.Location = new Point(22, 73);
             NccComboBox.Name = "NccComboBox";
             NccComboBox.Size = new Size(235, 27);
             NccComboBox.TabIndex = 94;
+            NccComboBox.SelectedIndexChanged += NccComboBox_SelectedIndexChanged;
             // 
             // ItemReceivedListView
             // 

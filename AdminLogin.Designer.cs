@@ -88,7 +88,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(134, 515);
+            label2.Location = new Point(143, 516);
             label2.Name = "label2";
             label2.Size = new Size(44, 19);
             label2.TabIndex = 6;
@@ -100,7 +100,7 @@
             label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(192, 0, 0);
-            label3.Location = new Point(175, 515);
+            label3.Location = new Point(184, 516);
             label3.Name = "label3";
             label3.Size = new Size(58, 19);
             label3.TabIndex = 7;

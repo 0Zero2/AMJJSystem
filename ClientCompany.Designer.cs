@@ -114,6 +114,7 @@
             TxtCompanyID.Location = new Point(10, 115);
             TxtCompanyID.Multiline = true;
             TxtCompanyID.Name = "TxtCompanyID";
+            TxtCompanyID.ReadOnly = true;
             TxtCompanyID.Size = new Size(181, 27);
             TxtCompanyID.TabIndex = 2;
             // 

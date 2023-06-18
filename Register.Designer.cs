@@ -45,6 +45,7 @@
             ClientRB = new RadioButton();
             driverRB = new RadioButton();
             DriverLabel = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // clearBTN
@@ -88,9 +89,9 @@
             loginLabel.ForeColor = Color.FromArgb(192, 0, 0);
             loginLabel.Location = new Point(232, 573);
             loginLabel.Name = "loginLabel";
-            loginLabel.Size = new Size(45, 17);
+            loginLabel.Size = new Size(88, 17);
             loginLabel.TabIndex = 10;
-            loginLabel.Text = "Log in";
+            loginLabel.Text = "Client's Login";
             loginLabel.Click += loginLabel_Click;
             // 
             // label4
@@ -135,15 +136,16 @@
             // 
             // TxtPassword
             // 
-            TxtPassword.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtPassword.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtPassword.Location = new Point(56, 417);
             TxtPassword.Name = "TxtPassword";
-            TxtPassword.Size = new Size(267, 38);
+            TxtPassword.Size = new Size(267, 26);
             TxtPassword.TabIndex = 10;
             TxtPassword.UseSystemPasswordChar = true;
             // 
             // TxtLastname
             // 
+            TxtLastname.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtLastname.Location = new Point(57, 253);
             TxtLastname.Multiline = true;
             TxtLastname.Name = "TxtLastname";
@@ -152,6 +154,7 @@
             // 
             // TxtFirstname
             // 
+            TxtFirstname.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtFirstname.Location = new Point(56, 189);
             TxtFirstname.Multiline = true;
             TxtFirstname.Name = "TxtFirstname";
@@ -170,6 +173,7 @@
             // 
             // TxtUsername
             // 
+            TxtUsername.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtUsername.Location = new Point(57, 311);
             TxtUsername.Multiline = true;
             TxtUsername.Name = "TxtUsername";
@@ -217,17 +221,28 @@
             DriverLabel.AutoSize = true;
             DriverLabel.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             DriverLabel.ForeColor = Color.FromArgb(192, 0, 0);
-            DriverLabel.Location = new Point(166, 599);
+            DriverLabel.Location = new Point(232, 604);
             DriverLabel.Name = "DriverLabel";
-            DriverLabel.Size = new Size(46, 17);
+            DriverLabel.Size = new Size(83, 17);
             DriverLabel.TabIndex = 10;
-            DriverLabel.Text = "Driver";
+            DriverLabel.Text = "Driver Login";
             DriverLabel.Click += DriverLabel_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(70, 604);
+            label5.Name = "label5";
+            label5.Size = new Size(162, 17);
+            label5.TabIndex = 11;
+            label5.Text = "Already have an account?";
             // 
             // frmRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(381, 644);
             Controls.Add(driverRB);
             Controls.Add(ClientRB);
@@ -236,6 +251,7 @@
             Controls.Add(showCheckBox);
             Controls.Add(DriverLabel);
             Controls.Add(loginLabel);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label6);
@@ -249,7 +265,6 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmRegister";
             Text = "Register";
-            Load += frmRegister_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,5 +288,6 @@
         private RadioButton ClientRB;
         private RadioButton driverRB;
         private Label DriverLabel;
+        private Label label5;
     }
 }
